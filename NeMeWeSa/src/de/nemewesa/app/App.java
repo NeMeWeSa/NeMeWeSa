@@ -41,6 +41,7 @@ public class App {
 		player.setCurrentPlanet(level.getSector(0).getSolarsystem(0).getPlanet(0));
 		player.setHomePlanet(player.getCurrentPlanet());
 		player.setHomeSolarsystem(level.getSector(0).getSolarsystem(0));
+		// Dem Spieler wird der Heimatplanet zu seinem Besitztum hinzugefuegt
 		player.addOwnership(player.getHomePlanet());
 	
 		System.out.println("[NeMeWeSa] Willkommen im NeMeWeSa " + player.getName());
