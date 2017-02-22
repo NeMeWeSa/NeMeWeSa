@@ -1,4 +1,7 @@
-package de.nemewesa.level;
+package de.nemewesa.spaceships;
+
+import de.nemewesa.character.Enemy;
+import de.nemewesa.level.Moon;
 
 public class Fighter extends Spaceship {
 	

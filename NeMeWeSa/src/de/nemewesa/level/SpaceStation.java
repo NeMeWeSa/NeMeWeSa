@@ -2,6 +2,8 @@ package de.nemewesa.level;
 
 import java.util.ArrayList;
 
+import de.nemewesa.modules.Module;
+
 public class SpaceStation {
 	
 	public ArrayList<String> warehouse;

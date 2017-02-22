@@ -1,4 +1,4 @@
-package de.nemewesa.level;
+package de.nemewesa.modules;
 
 public class Module {
 	

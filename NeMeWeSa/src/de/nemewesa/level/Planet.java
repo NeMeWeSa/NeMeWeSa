@@ -2,6 +2,8 @@ package de.nemewesa.level;
 
 import java.util.ArrayList;
 
+import de.nemewesa.modules.Defence;
+
 public class Planet implements Generetable{
 	
 	public Moon moonName;
