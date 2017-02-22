@@ -25,5 +25,5 @@ public class Solarsystem implements Generetable{
 	public void printChildren() {
 		
 	}
-
+ 
 }
