@@ -12,6 +12,14 @@ public class Spaceship {
 	
 	public static ArrayList<Resource> stock; 
 	
+	public Spaceship(String shipName, String shipType, int shipHealth, int shipStrange, int shipFuel) {
+		this.shipName = shipName;
+		this.shipType = shipType;
+		this.shipHealth = shipHealth;
+		this.shipStrange = shipStrange;
+		this.shipFuel = shipFuel;
+	}
+
 	public static void fly()
 	{
 		

@@ -1,5 +1,7 @@
 package de.nemewesa.level;
 
+
+
 import java.util.ArrayList;
 
 import de.nemewesa.helper.Helper;
@@ -31,9 +33,7 @@ public class App {
 			luna.captured = false;
 			
 			ArrayList<Resource> stock1 = new ArrayList<>();
-			Spaceship fighter = new Spaceship();
-			fighter.shipHealth = 100;
-			fighter.shipStrange = 10;
+			Fighter rambo = new Fighter();
 			
 			Enemy greenAlien = new Enemy();
 			greenAlien.enemyHealth = 20;
@@ -44,26 +44,26 @@ public class App {
 			redAlien.enemyStrange = 30;
 			
 			// Hier attackiere ich als probe den Fighter(es klappt)
-			greenAlien.enemyAttack(fighter);
-			redAlien.enemyAttack(fighter);
-			fighter.shipAttack(redAlien);
-			fighter.shipAttack(redAlien);
-			fighter.shipAttack(redAlien);
-			fighter.shipAttack(redAlien);
+		//	greenAlien.enemyAttack(rambo);
+			redAlien.enemyAttack(rambo);
+			rambo.shipAttack(redAlien);
+			rambo.shipAttack(redAlien);
+			rambo.shipAttack(redAlien);
+			rambo.shipAttack(redAlien);
 			
 			//Enemy.attack();
 			//Enemy.attack(greenAlien);
 			
 			if(redAlien.enemyHealth <= 0)
 			{
-				fighter.capturing(luna);
+				rambo.capturing(luna);
 				
 			}
 			
-			System.out.println("Fighter Health = "+ fighter.shipHealth);
+			System.out.println("Fighter Health = "+ rambo.shipHealth);
 			System.out.println("RedAlien Health = "+ redAlien.enemyHealth);
 			System.out.println("Ist Luna erobert " + luna.captured);
-		   
+			
 	   }
 
    }
