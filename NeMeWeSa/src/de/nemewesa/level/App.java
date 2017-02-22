@@ -12,13 +12,14 @@ public class App {
 	   level.generate();
 	   level.printChildren();
 	   
-	   for(int i = 0; i < 100; i++){
-		   
-		   int myVar = Helper.random(1, 10);
-		   
-		   System.out.println(myVar);
-		   
-		   
+//	   for(int i = 0; i < 10; i++){
+//		   
+//		   int myVar = Helper.random(1, 10);
+//		   
+//		   System.out.println(myVar);
+//		   
+//	   }
+	   
 		   // Peters Teil.
 		   // Erstellte Objekte um zu schauen ob die methoden funktionieren
 		   
@@ -64,7 +65,7 @@ public class App {
 			System.out.println("RedAlien Health = "+ redAlien.enemyHealth);
 			System.out.println("Ist Luna erobert " + luna.captured);
 		   
-	   }
+
 
    }
    
