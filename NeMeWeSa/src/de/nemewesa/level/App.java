@@ -10,9 +10,9 @@ public class App {
 	   level.generate();
 	   level.printChildren();
 	   
-	   for(int i = 0; i < 100; i++){
+	   for(int i = 0; i < 3; i++){
 		   
-		   int myVar = Helper.random(1, 10);
+		   int myVar = Helper.random(1, 3);
 		   
 		   System.out.println(myVar);
 		   
