@@ -18,26 +18,35 @@ public class Solarsystem implements Generetable{
 	}
 	
 	@Override
-	public void generate(int element) {
+	public void generate(int element){
+
 		String planetname = null;
 		String filename = "level\\" + Level.level + "\\planets\\" + element + "\\planets.txt";
 
 		try (BufferedReader br = new BufferedReader(new FileReader(filename))) {
 
-			//FileReader fr = new FileReader(filename);
-			//BufferedReader br = new BufferedReader(fr);
-
 			while ((planetname = br.readLine()) != null) {
 				this.planets.add(new Planet(planetname, this));
 			}
+			
+//			for (int i = 0; i < planets.size(); i++) {
+//				planets.get(i).generate(i);
+//			}
+			
 		}
 		catch(Exception e){
 			e.printStackTrace();
 		}
+
 	}
 
 	@Override
 	public void printChildren() {
+		
+		for (Planet planet : planets) {
+			System.out.println(planet.name + " : " + planet.parent.name);
+			//planet.printChildren();
+		}
 		
 	}
  
