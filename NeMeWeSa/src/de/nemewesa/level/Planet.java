@@ -11,6 +11,10 @@ public class Planet {
 	public Defence defenceName;
 	public boolean minePosible;
 	
+	public Planet(String planetname, Solarsystem solarsystem) {
+		// TODO Auto-generated constructor stub
+	}
+
 	public static void defending()
 	{
 		//defencePower
