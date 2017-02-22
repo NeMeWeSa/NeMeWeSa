@@ -17,6 +17,10 @@ public class Solarsystem implements Generetable{
 		this.parent = parent;
 	}
 	
+	public Planet getPlanet (int index) {
+		return planets.get(index);
+	}	
+	
 	@Override
 	public void generate(int element){
 

@@ -15,6 +15,12 @@ public class Sector implements Generetable{
 		this.name = name;
 		this.parent = parent;
 	}
+	
+
+	public Solarsystem getSolarsystem (int index) {
+		return solarsystems.get(index);
+	}
+
 
 	@Override
 	public void generate(int element){

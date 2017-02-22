@@ -1,12 +1,10 @@
 package de.nemewesa.app;
 
-
-
 import java.util.ArrayList;
 import java.util.Scanner;
 
 import de.nemewesa.character.Enemy;
-import de.nemewesa.helper.Helper;
+import de.nemewesa.character.Player;
 import de.nemewesa.level.Level;
 import de.nemewesa.level.Moon;
 import de.nemewesa.level.Resource;
@@ -17,39 +15,35 @@ import de.nemewesa.spaceships.Fighter;
 public class App {
 	
 	public static final int PLAYER_AP = 20;
+	private Player player;
+	private Level level;
 
 	public static void main(String[] args) throws Exception {
 
 		App app = new App();
 		app.createNewLevel(1);
-
-		app.runTests();
+		app.createPlayer();
+		//app.runTests();
 	}
 
 	public void createNewLevel(int lev){
-		Level level = new Level(lev);
+		level = new Level(lev);
 		level.generate();
-		level.printChildren();
+		//level.printChildren();
 	}
 	
 	public void createPlayer(){
 		
 		Scanner scanner = new Scanner(System.in);
-		System.out.println("[Dungeon] Bitte geben Sie einen Spielernamen ein > ");
+		System.out.println("[NeMeWeSa] Bitte geben Sie einen Spielernamen ein > ");
 		String playerName = scanner.nextLine();
-//		player = new Player(playerName);
-//		player.setCurrentSpace(s_0_0);
-//		
-//		System.out.println("Willkommen im Dungeon " + player.getName());
-//		System.out.println("[Spielzuege] w => nach Norden gehen");
-//		System.out.println("[Spielzuege] d => nach Osten gehen");
-//		System.out.println("[Spielzuege] s => nach Sueden gehen");
-//		System.out.println("[Spielzuege] a => nach Westen gehen");
-//		System.out.println("[Spielzuege] y => Gegenstand aufsammeln");
-//		System.out.println("[Spielzuege] x => Gegenstand fallenlassen");
-//		System.out.println("[Spielzuege] c => Inventar anzeigen");
-//		System.out.println("[Spielzuege] q => Dungeon verlassen");
-//		player.getCurrentSpace().showEnvironment();
+		player = new Player(playerName);
+		player.setCurrentPlanet(level.getSector(0).getSolarsystem(0).getPlanet(0));
+		player.setHomePlanet(player.getCurrentPlanet());
+		player.setHomeSolarsystem(level.getSector(0).getSolarsystem(0));
+	
+		System.out.println("[NeMeWeSa] Willkommen im NeMeWeSa " + player.getName());
+		System.out.println(player);
 		
 	}
 
