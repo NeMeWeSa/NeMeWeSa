@@ -1,4 +1,6 @@
-package de.nemewesa.level;
+package de.nemewesa.character;
+
+import de.nemewesa.spaceships.Spaceship;
 
 public class Enemy {
 	

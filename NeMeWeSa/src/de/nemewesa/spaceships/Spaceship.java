@@ -1,6 +1,10 @@
-package de.nemewesa.level;
+package de.nemewesa.spaceships;
 
 import java.util.ArrayList;
+
+import de.nemewesa.character.Enemy;
+import de.nemewesa.level.Moon;
+import de.nemewesa.level.Resource;
 
 public class Spaceship {
 	

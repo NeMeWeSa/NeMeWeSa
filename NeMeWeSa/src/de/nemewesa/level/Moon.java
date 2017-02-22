@@ -1,5 +1,7 @@
 package de.nemewesa.level;
 
+import de.nemewesa.character.Enemy;
+
 public class Moon {
 	
 	public String moonName;	

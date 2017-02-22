@@ -1,8 +1,8 @@
 package de.nemewesa.level;
 
 import java.util.ArrayList;
-
 import de.nemewesa.helper.Helper;
+import de.nemewesa.modules.Defence;
 
 public class Planet implements Generetable{
 	

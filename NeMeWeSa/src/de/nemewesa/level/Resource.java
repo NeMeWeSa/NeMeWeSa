@@ -10,6 +10,5 @@ public class Resource {
 		this.resourceName = resourceName;
 		this.lot = lot;
 	}
-	
 
 }
