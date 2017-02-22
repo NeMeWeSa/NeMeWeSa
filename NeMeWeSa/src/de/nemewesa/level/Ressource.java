@@ -6,23 +6,30 @@ public class Ressource {
 	
 	public String resourceName;
 	/*
-	 * value	 = 	0 bronze, 1 = silber, 2= gold .. je höher die zahl desto 
+	 * value	 = 	0 bronze, 1 = silber, 2= gold ..... je höher die zahl desto 
 	 * 				höher der wert
 	 * weigth 	= 	wieviel "platz" nimmt die ressource weg, oder wieviel kg/t 
 	 * 				wiegt eine einheit davon
 	 * grow		=	in welchen abstand kommt wieder eine einheit	
 	 */
-	public int value;2
-	public int weigth;
-	public int grow;
-	public int dropChance;
+	public int value;
+	public int space;
+	public int grow;	
+	public int amount;	
+	public int dropRate;
 	
-	public Ressource(String resourceName, int value, int weigth, int grow)
+	public Ressource(String resourceName, int value, int amount, int space, int grow, int dropChance)
 	{ 
 		this.resourceName = resourceName;
 		this.value = value;
-		this.weigth = weigth;
+		this.space = space;
+		this.amount = amount;
+		// grow wird bestimmt durch den modolu später
+		// grow%4 = 0 kupfer wächst alle 4 Runden nach
+		// grow%6 = 0 silber wächst alle 4 Runden nach 
+		// .....
 		this.grow = grow;
+		this.dropRate = dropChance;
 	}  
 	
 

@@ -9,19 +9,41 @@ public class Planet implements Generetable{
 	
 	public Moon moonName;
 	public String citizen;
-	public ArrayList<Ressource> ressource;
+	public ArrayList<Ressource> ressource = new ArrayList<>();
 	public SpaceStation stationName;
 	public Defence defenceName;
 	public boolean minePosible;
 	public String name;
 	public Solarsystem parent;
 	public String[] firstname = {"Ben", "Pe", "To", "Jau", "Ja", "Ter", "Masz", "Res", "Min", "Ro", "Sen", "Ta", "Bue", "Ur", "Ban", "Iak", "Dzi", "Ko", "Wi", "Cki"};
-	Ressource gold = new Ressource("Gold", 2, 1, 1);
+	/* wenn das raumschiff zb. 10 plätze frei hat 
+	 * laesst sich über den space festlegen wieviel man tragen kann
+	 * Name, value, amount, space, grow(in steps), dropChance
+	 */
+	Ressource bronze = new Ressource("Bronze", 1, 50, 2, 4, 85);
+	Ressource silver = new Ressource("Silber", 2, 40,  2, 6, 50);
+	Ressource gold = new Ressource("Gold", 3, 30, 2, 8, 30);
+	Ressource jewel= new Ressource("Juwel", 5, 10, 1, 10, 10);
 	
 	public Planet(String name, Solarsystem parent) {
 		this.name = generateName();
 		this.parent = parent;
-		this.gold.dropChance = 2;
+		/*
+		 * Per Zufall entscheiden anhand der Werte von Ressourcen
+		 * ob ein Planet auch die Ressourcen hat
+		 */
+		if(Helper.random(0, 100)<bronze.dropRate) {
+			this.ressource.add(bronze);
+		}
+		if(Helper.random(0, 100)<silver.dropRate) {
+			this.ressource.add(silver);
+		}
+		if(Helper.random(0, 100)<gold.dropRate) {
+			this.ressource.add(gold);
+		}
+		if(Helper.random(0, 100)<jewel.dropRate) {
+			this.ressource.add(jewel);
+		}
 	}
 
 	public static void defending()
