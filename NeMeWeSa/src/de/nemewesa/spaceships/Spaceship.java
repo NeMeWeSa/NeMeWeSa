@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 import de.nemewesa.character.Enemy;
 import de.nemewesa.level.Moon;
-import de.nemewesa.level.Resource;
+import de.nemewesa.level.Ressource;
 
 public class Spaceship {
 	
@@ -14,7 +14,7 @@ public class Spaceship {
 	public int shipStrange;
 	public int shipFuel;
 	
-	public static ArrayList<Resource> stock; 
+	public static ArrayList<Ressource> stock; 
 	
 	public Spaceship(String shipName, String shipType, int shipHealth, int shipStrange, int shipFuel) {
 		this.shipName = shipName;

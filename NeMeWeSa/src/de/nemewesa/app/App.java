@@ -9,7 +9,7 @@ import de.nemewesa.character.Enemy;
 import de.nemewesa.helper.Helper;
 import de.nemewesa.level.Level;
 import de.nemewesa.level.Moon;
-import de.nemewesa.level.Resource;
+import de.nemewesa.level.Ressource;
 import de.nemewesa.level.SpaceStation;
 import de.nemewesa.spaceships.Fighter;
 
@@ -74,7 +74,7 @@ public class App {
 		luna.moonName = "Luna";
 		luna.captured = false;
 
-		ArrayList<Resource> stock1 = new ArrayList<>();
+		ArrayList<Ressource> stock1 = new ArrayList<>();
 		Fighter rambo = new Fighter();
 
 		Enemy greenAlien = new Enemy();
