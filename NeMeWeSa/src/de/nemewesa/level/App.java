@@ -66,7 +66,7 @@ public class App {
 			{
 				rambo.capturing(luna); 
 				
-			}
+			} //Test
 			
 			System.out.println("Fighter Health = "+ rambo.shipHealth);
 			System.out.println("RedAlien Health = "+ redAlien.enemyHealth);
