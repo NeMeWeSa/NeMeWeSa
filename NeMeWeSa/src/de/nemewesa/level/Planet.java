@@ -16,11 +16,12 @@ public class Planet implements Generetable{
 	public String name;
 	public Solarsystem parent;
 	public String[] firstname = {"Ben", "Pe", "To", "Jau", "Ja", "Ter", "Masz", "Res", "Min", "Ro", "Sen", "Ta", "Bue", "Ur", "Ban", "Iak", "Dzi", "Ko", "Wi", "Cki"};
-	Ressource gold = new Ressource("Gold", 1, 1, 1);
+	Ressource gold = new Ressource("Gold", 2, 1, 1);
 	
 	public Planet(String name, Solarsystem parent) {
 		this.name = generateName();
 		this.parent = parent;
+		this.gold.dropChance = 2;
 	}
 
 	public static void defending()
