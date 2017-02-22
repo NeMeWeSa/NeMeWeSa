@@ -33,7 +33,7 @@ public class Sector implements Generetable{
 		String solarsystemname = null;
 
 		// Pfad unter Mac
-		String filename = "/Users/admin/Desktop/IntelliJ/GIT/NeMeWeSa/NeMeWeSa/level/" + Level.level + "/solarsystems/" + element + "/solarsystems.txt";
+		String filename = "level/" + Level.level + "/solarsystems/" + element + "/solarsystems.txt";
 
 		// Pfad unter Windows
 		// String filename = "level\\" + Level.level + "\\solarsystems\\" + element + "\\solarsystems.txt";

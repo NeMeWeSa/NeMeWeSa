@@ -23,7 +23,7 @@ public class Player {
 	
 	public String toString(){
 		String info = "";
-		info += "[NeMeWeSa] Du befindest dich auf den Planeten " + this.currentPlanet.name + ".\n";
+		info += "[NeMeWeSa] Du befindest dich auf dem Planeten " + this.currentPlanet.name + ".\n";
 		info += "[NeMeWeSa] " + this.homePlanet.name + " ist dein Heimatplanet.\n";
 		info += "[NeMeWeSa] Dein Heimat-Solarsystem ist der " + this.homeSolarsystem.name + ".\n";
 		info += "[NeMeWeSa] Dein Besitz > \n";

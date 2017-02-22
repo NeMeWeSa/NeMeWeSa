@@ -26,7 +26,7 @@ public class Level{
 		String sectorname = null;
 
 		// Pfad unter Mac
-		String filename = "/Users/admin/Desktop/IntelliJ/GIT/NeMeWeSa/NeMeWeSa/level/" + Level.level + "/sectors/sectors.txt";
+		String filename = "level/" + Level.level + "/sectors/sectors.txt";
 
 		// Pfad unter Windows
 		// String filename = "level\\" + Level.level + "\\sectors\\sectors.txt";

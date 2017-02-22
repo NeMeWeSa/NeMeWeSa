@@ -51,11 +51,6 @@ public class Planet implements Generetable{
 		return this.name;
 	}
 
-	public static void defending()
-	{
-		//defencePower
-	}
-
 	@Override
 	public void generate(int element) {
 		
@@ -65,6 +60,7 @@ public class Planet implements Generetable{
 	public void printChildren() {
 		
 	}
+	
 	public String generateName() {
 		String name1 = firstname[Helper.random(0, firstname.length)];
 		String name2 = firstname[Helper.random(0, firstname.length)];
@@ -82,6 +78,9 @@ public class Planet implements Generetable{
 		
 	}
 	
-	
+	public static void defending()
+	{
+		//defencePower
+	}
 
 }
