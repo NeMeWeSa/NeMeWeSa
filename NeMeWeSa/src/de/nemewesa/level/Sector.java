@@ -24,12 +24,14 @@ public class Sector implements Generetable{
 
 		try (BufferedReader br = new BufferedReader(new FileReader(filename))) {
 
-			//FileReader fr = new FileReader(filename);
-			//BufferedReader br = new BufferedReader(fr);
-
 			while ((solarsystemname = br.readLine()) != null) {
 				this.solarsystems.add(new Solarsystem(solarsystemname, this));
 			}
+			
+			for (int i = 0; i < solarsystems.size(); i++) {
+				solarsystems.get(i).generate(i);
+			}
+			
 		}
 		catch(Exception e){
 			e.printStackTrace();
@@ -41,6 +43,7 @@ public class Sector implements Generetable{
 		
 		for (Solarsystem solarsystem : solarsystems) {
 			System.out.println(solarsystem.name + " : " + solarsystem.parent.name);
+			solarsystem.printChildren();
 		}
 		
 	}
