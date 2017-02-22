@@ -24,9 +24,6 @@ public class Level{
 
 		try (BufferedReader br = new BufferedReader(new FileReader(filename))) {
 
-			//FileReader fr = new FileReader(filename);
-			//BufferedReader br = new BufferedReader(fr);
-
 			while ((sectorname = br.readLine()) != null) {
 				this.sectors.add(new Sector(sectorname, this));
 			}

@@ -14,13 +14,21 @@ public class App {
 	   level.generate();
 	   level.printChildren();
 	   
-	   for(int i = 0; i < 100; i++){
+	   for(int i = 0; i < 3; i++){
 		   
-		   int myVar = Helper.random(1, 10);
+		   int myVar = Helper.random(1, 3);
 		   
 		   System.out.println(myVar);
+	   }   
 		   
-		   
+//	   for(int i = 0; i < 10; i++){
+//		   
+//		   int myVar = Helper.random(1, 10);
+//		   
+//		   System.out.println(myVar);
+//		   
+//	   }
+	   
 		   // Peters Teil.
 		   // Erstellte Objekte um zu schauen ob die methoden funktionieren
 		   
@@ -66,6 +74,4 @@ public class App {
 			
 	   }
 
-   }
-   
 }
