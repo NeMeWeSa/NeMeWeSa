@@ -40,10 +40,7 @@ public class Spaceship {
 	{
 		System.out.println("Glückwunsch! "+ affiliation.moonName + " wurde erobert!!!");
 		return affiliation.captured = true;
-				
 	}
 	
 	
-	
-
 }
