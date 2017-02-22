@@ -23,10 +23,20 @@ public class Sector implements Generetable{
 
 
 	@Override
+	public String getName() {
+		return this.name;
+	}
+
+	@Override
 	public void generate(int element){
 
 		String solarsystemname = null;
-		String filename = "level\\" + Level.level + "\\solarsystems\\" + element + "\\solarsystems.txt";
+
+		// Pfad unter Mac
+		String filename = "/Users/admin/Desktop/IntelliJ/GIT/NeMeWeSa/NeMeWeSa/level/" + Level.level + "/solarsystems/" + element + "/solarsystems.txt";
+
+		// Pfad unter Windows
+		// String filename = "level\\" + Level.level + "\\solarsystems\\" + element + "\\solarsystems.txt";
 
 		try (BufferedReader br = new BufferedReader(new FileReader(filename))) {
 
@@ -44,7 +54,7 @@ public class Sector implements Generetable{
 		}
 
 	}
-	
+	@Override
 	public void printChildren(){
 		
 		for (Solarsystem solarsystem : solarsystems) {
