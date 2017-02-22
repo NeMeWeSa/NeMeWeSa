@@ -16,8 +16,8 @@ public class Planet implements Generetable{
 	public String name;
 	public Solarsystem parent;
 	public String[] firstname = {"Ben", "Pe", "To", "Jau", "Ja", "Ter", "Masz", "Res", "Min", "Ro", "Sen", "Ta", "Bue", "Ur", "Ban", "Iak", "Dzi", "Ko", "Wi", "Cki"};
-	/* wenn das raumschiff zb. 10 plätze frei hat 
-	 * laesst sich über den space festlegen wieviel man tragen kann
+	/* wenn das raumschiff zb. 10 plaetze frei hat
+	 * laesst sich ueber den space festlegen wieviel man tragen kann
 	 * Name, value, amount, space, grow(in steps), dropChance
 	 */
 	Ressource bronze = new Ressource("Bronze", 1, 50, 2, 4, 85);
@@ -44,6 +44,11 @@ public class Planet implements Generetable{
 		if(Helper.random(0, 100)<jewel.dropRate) {
 			this.ressource.add(jewel);
 		}
+	}
+
+	@Override
+	public String getName() {
+		return this.name;
 	}
 
 	public static void defending()
