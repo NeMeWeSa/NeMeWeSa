@@ -18,13 +18,23 @@ public class Solarsystem implements Generetable{
 	
 	public Planet getPlanet (int index) {
 		return planets.get(index);
-	}	
+	}
+
+	@Override
+	public String getName() {
+		return this.name;
+	}
 	
 	@Override
 	public void generate(int element){
 
 		String planetname = null;
-		String filename = "level\\" + Level.level + "\\planets\\" + element + "\\planets.txt";
+
+		// Pfad unter Mac
+		String filename = "/Users/admin/Desktop/IntelliJ/GIT/NeMeWeSa/NeMeWeSa/level/" + Level.level + "/planets/" + element + "/planets.txt";
+
+		// Pfad unter Windows
+		// String filename = "level\\" + Level.level + "\\planets\\" + element + "\\planets.txt";
 
 		try (BufferedReader br = new BufferedReader(new FileReader(filename))) {
 
