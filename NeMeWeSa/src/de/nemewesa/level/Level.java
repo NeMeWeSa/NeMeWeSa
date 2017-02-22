@@ -24,7 +24,12 @@ public class Level{
 	public void generate(){
 
 		String sectorname = null;
-		String filename = "level\\" + Level.level + "\\sectors\\sectors.txt";
+
+		// Pfad unter Mac
+		String filename = "/Users/admin/Desktop/IntelliJ/GIT/NeMeWeSa/NeMeWeSa/level/" + Level.level + "/sectors/sectors.txt";
+
+		// Pfad unter Windows
+		// String filename = "level\\" + Level.level + "\\sectors\\sectors.txt";
 
 		try (BufferedReader br = new BufferedReader(new FileReader(filename))) {
 
