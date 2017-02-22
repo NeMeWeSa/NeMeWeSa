@@ -3,6 +3,7 @@ package de.nemewesa.app;
 
 
 import java.util.ArrayList;
+import java.util.Scanner;
 
 import de.nemewesa.character.Enemy;
 import de.nemewesa.helper.Helper;
@@ -12,7 +13,10 @@ import de.nemewesa.level.Resource;
 import de.nemewesa.level.SpaceStation;
 import de.nemewesa.spaceships.Fighter;
 
+
 public class App {
+	
+	public static final int PLAYER_AP = 20;
 
 	public static void main(String[] args) throws Exception {
 
@@ -27,8 +31,29 @@ public class App {
 		level.generate();
 		level.printChildren();
 	}
+	
+	public void createPlayer(){
+		
+		Scanner scanner = new Scanner(System.in);
+		System.out.println("[Dungeon] Bitte geben Sie einen Spielernamen ein > ");
+		String playerName = scanner.nextLine();
+//		player = new Player(playerName);
+//		player.setCurrentSpace(s_0_0);
+//		
+//		System.out.println("Willkommen im Dungeon " + player.getName());
+//		System.out.println("[Spielzuege] w => nach Norden gehen");
+//		System.out.println("[Spielzuege] d => nach Osten gehen");
+//		System.out.println("[Spielzuege] s => nach Sueden gehen");
+//		System.out.println("[Spielzuege] a => nach Westen gehen");
+//		System.out.println("[Spielzuege] y => Gegenstand aufsammeln");
+//		System.out.println("[Spielzuege] x => Gegenstand fallenlassen");
+//		System.out.println("[Spielzuege] c => Inventar anzeigen");
+//		System.out.println("[Spielzuege] q => Dungeon verlassen");
+//		player.getCurrentSpace().showEnvironment();
+		
+	}
 
-	public void runTests(){  
+	public void runTests(){
 
 //			   for(int i = 0; i < 10; i++){
 //				   
