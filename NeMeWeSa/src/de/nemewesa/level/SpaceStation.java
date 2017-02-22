@@ -8,7 +8,7 @@ public class SpaceStation {
 	
 	public ArrayList<String> warehouse;
 	public String stationName;
-	// Hier kommt später vom Objekt Human
+	// Hier kommt spaeter vom Objekt Human
 	public String humanName;
 	public int researchWas;
 	
