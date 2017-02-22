@@ -13,7 +13,7 @@ public class Solarsystem implements Generetable{
 
 	@Override
 	public void generate(int element) {
-		
+		System.out.println("");
 	}
 
 	@Override
