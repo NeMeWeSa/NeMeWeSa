@@ -15,6 +15,10 @@ public class Level{
 	public Level(int level){
 		Level.level = level;
 	}
+	
+	public Sector getSector(int index){
+		return sectors.get(index);
+	}
 
 
 	public void generate(){
