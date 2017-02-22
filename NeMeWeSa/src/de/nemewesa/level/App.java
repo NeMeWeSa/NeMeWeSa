@@ -17,7 +17,7 @@ public class App {
 		   int myVar = Helper.random(1, 3);
 		   
 		   System.out.println(myVar);
-		   
+	   }   
 		   
 		   // Peters Teil.
 		   // Erstellte Objekte um zu schauen ob die methoden funktionieren
@@ -66,6 +66,4 @@ public class App {
 		   
 	   }
 
-   }
-   
 }
