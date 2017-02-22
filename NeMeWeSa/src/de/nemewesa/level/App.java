@@ -56,7 +56,7 @@ public class App {
 			
 			if(redAlien.enemyHealth <= 0)
 			{
-				rambo.capturing(luna);
+				rambo.capturing(luna); 
 				
 			}
 			
