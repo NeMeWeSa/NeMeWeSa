@@ -21,7 +21,6 @@ public class Planet implements Generetable{
 	public Planet(String name, Solarsystem parent) {
 		this.name = generateName();
 		this.parent = parent;
-		this.
 	}
 
 	public static void defending()
