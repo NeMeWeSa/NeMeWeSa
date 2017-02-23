@@ -39,6 +39,21 @@ public class App {
 	
 		System.out.println("[NeMeWeSa] Willkommen im NeMeWeSa " + player.getName());
 		System.out.println(player);
+		
+		System.out.println(player.getCurrentPlanet().resource.get(0).amount);
+		player.getCurrentPlanet().mine(player.getCurrentPlanet().resource.get(0));
+		System.out.println(player.getCurrentPlanet().resource.get(0).amount);
+		player.getCurrentPlanet().mine(player.getCurrentPlanet().resource.get(0));
+		System.out.println(player.getCurrentPlanet().resource.get(0).amount);
+		player.getCurrentPlanet().mine(player.getCurrentPlanet().resource.get(0));
+		System.out.println(player.getCurrentPlanet().resource.get(0).amount);
+		player.getCurrentPlanet().mine(player.getCurrentPlanet().resource.get(0));
+		
+		
+		
+		
+//		player.getCurrentPlanet().mine();
+		
 //		this.round.setNewRound();
 //		this.round.setNewRound();
 //		player.getCurrentPlanet().income();

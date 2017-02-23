@@ -19,6 +19,8 @@ public class Resource {
 	public int dropRate;
 	public int mine;
 	
+	
+	
 	public Resource(String resourceName, int value, int amount, int mine, int space, int grow, int dropChance)
 	{ 
 		this.resourceName = resourceName;
@@ -32,6 +34,12 @@ public class Resource {
 		// .....
 		this.grow = grow;
 		this.dropRate = dropChance;
+	}
+
+
+
+	public int getGrow() {
+		return grow;
 	}  
 	
 
