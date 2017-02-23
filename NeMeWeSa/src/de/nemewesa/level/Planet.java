@@ -14,7 +14,7 @@ public class Planet implements Generetable, Observer{
 	public Moon moonName;
 	// max 20 einwohner
 	public int citizen;
-	public ArrayList<Ressource> ressource = new ArrayList<>();
+	public ArrayList<Resource> resource = new ArrayList<>();
 	public SpaceStation stationName;
 	public Defence defenceName;
 	public boolean captured = false;
@@ -30,10 +30,10 @@ public class Planet implements Generetable, Observer{
 	 * laesst sich ueber den space festlegen wieviel man tragen kann
 	 * Name, value, amount, int mine, space, grow(in steps), dropChance 
 	 */
-	Ressource bronze = new Ressource("Bronze", 1, Helper.random(1, 50), 2, 2, 8, 85);
-	Ressource silver = new Ressource("Silber", 2, Helper.random(1, 40), 2,  2, 10, 50);
-	Ressource gold = new Ressource("Gold", 3, Helper.random(1, 30), 2, 2, 12, 30);
-	Ressource jewel= new Ressource("Juwel", 5, Helper.random(1, 10), 3, 1, 14, 10);
+	Resource bronze = new Resource("Bronze", 1, Helper.random(1, 50), 2, 2, 8, 85);
+	Resource silver = new Resource("Silber", 2, Helper.random(1, 40), 2,  2, 10, 50);
+	Resource gold = new Resource("Gold", 3, Helper.random(1, 30), 2, 2, 12, 30);
+	Resource jewel= new Resource("Juwel", 5, Helper.random(1, 10), 3, 1, 14, 10);
 	
 	
 	public Planet(String name, Solarsystem parent) {
@@ -43,23 +43,23 @@ public class Planet implements Generetable, Observer{
 		this.citizen = Helper.random(1, 20);
 		// Die Menge die die leute sammeln koennen
 		this.storage = (this.citizen*2)+5;
-		this.round  = Round.getRound();
+		this.round  = Round.getRoundInstance();
 		this.round.registerObserver(this);
 		/*
 		 * Per Zufall entscheiden anhand der Werte von Ressourcen
 		 * ob ein Planet auch die Ressourcen hat
 		 */
 		if(Helper.random(0, 100)<bronze.dropRate) {
-			this.ressource.add(bronze);
+			this.resource.add(bronze);
 		}
 		if(Helper.random(0, 100)<silver.dropRate) {
-			this.ressource.add(silver);
+			this.resource.add(silver);
 		}
 		if(Helper.random(0, 100)<gold.dropRate) {
-			this.ressource.add(gold);
+			this.resource.add(gold);
 		}
 		if(Helper.random(0, 100)<jewel.dropRate) {
-			this.ressource.add(jewel);
+			this.resource.add(jewel);
 		}
 	}
 	
@@ -72,16 +72,16 @@ public class Planet implements Generetable, Observer{
 	
 
 	public void income() {
-		 if(this.ressource.contains(bronze)) {
+		 if(this.resource.contains(bronze)) {
 			 System.out.println("bronze");
 		 }
-		 if(this.ressource.contains(silver)) {
+		 if(this.resource.contains(silver)) {
 			 System.out.println("silver");
 		 }
-		 if(this.ressource.contains(gold)) {
+		 if(this.resource.contains(gold)) {
 			 System.out.println("gold");
 		 }
-		 if(this.ressource.contains(jewel)) {
+		 if(this.resource.contains(jewel)) {
 			 System.out.println("juwel");
 		 }
 	}
@@ -94,8 +94,8 @@ public class Planet implements Generetable, Observer{
 		return this.size;
 	}
 
-	public ArrayList<Ressource> getRessource() {
-		return this.ressource;
+	public ArrayList<Resource> getRessource() {
+		return this.resource;
 	}
 
 	@Override
