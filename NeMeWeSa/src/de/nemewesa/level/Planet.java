@@ -59,7 +59,7 @@ public class Planet implements Generetable, Observer{
 		if(Helper.random(0, 100)<silver.dropRate) {
 			this.resource.add(silver);
 		}
-		if(Helper.random(0, 100)<gold.dropRate) {
+		if(Helper.random(0, 100)<gold.dropRate) { 
 			this.resource.add(gold);
 		}
 		if(Helper.random(0, 100)<jewel.dropRate) {
@@ -67,12 +67,8 @@ public class Planet implements Generetable, Observer{
 		}
 	}
 	
-	public int grow(int number) {
-		if(number % round.getRound() == 0) {
-			return 1;
-		}
-		return 0;
-	}	
+	
+	public void mine(Ressource res) {}
 	
 
 	public void income() {
