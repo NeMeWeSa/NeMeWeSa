@@ -2,10 +2,6 @@ package de.nemewesa.spaceships;
 
 import java.util.ArrayList;
 
-import de.nemewesa.character.Enemy;
-import de.nemewesa.level.Moon;
-import de.nemewesa.level.Ressource;
-
 public class Spaceship {
 	
 	public String shipName;
@@ -14,7 +10,7 @@ public class Spaceship {
 	public int shipStrange;
 	public int shipFuel;
 	
-	public static ArrayList<Ressource> stock; 
+	public static ArrayList<Resource> stock; 
 	
 	public Spaceship(String shipName, String shipType, int shipHealth, int shipStrange, int shipFuel) {
 		this.shipName = shipName;
@@ -40,7 +36,10 @@ public class Spaceship {
 	{
 		System.out.println("Glückwunsch! "+ affiliation.moonName + " wurde erobert!!!");
 		return affiliation.captured = true;
+				
 	}
 	
 	
+	
+
 }
