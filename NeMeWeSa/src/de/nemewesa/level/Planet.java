@@ -2,12 +2,10 @@ package de.nemewesa.level;
 
 import java.util.ArrayList;
 
-<<<<<<< HEAD
+
 import de.nemewesa.character.Human;
-=======
 import de.nemewesa.app.Observer;
 import de.nemewesa.app.Round;
->>>>>>> branch 'master' of https://github.com/NeMeWeSa/NeMeWeSa.git
 import de.nemewesa.helper.Helper;
 import de.nemewesa.modules.Defence;
 
@@ -42,12 +40,9 @@ public class Planet implements Generetable, Observer{
 		this.name = generateName();
 		this.parent = parent;
 		this.size = Helper.random(100, 1000);
-<<<<<<< HEAD
 		this.citizen = alien.amount;
-=======
 		this.round  = Round.getRound();
 		this.round.registerObserver(this);
->>>>>>> branch 'master' of https://github.com/NeMeWeSa/NeMeWeSa.git
 		/*
 		 * Per Zufall entscheiden anhand der Werte von Ressourcen
 		 * ob ein Planet auch die Ressourcen hat
