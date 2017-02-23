@@ -19,6 +19,8 @@ public class Ressource {
 	public int dropRate;
 	public int mine;
 	
+	
+	
 	public Ressource(String resourceName, int value, int amount, int mine, int space, int grow, int dropChance)
 	{ 
 		this.resourceName = resourceName;

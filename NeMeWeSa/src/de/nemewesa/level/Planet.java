@@ -34,7 +34,8 @@ public class Planet implements Generetable, Observer{
 	Ressource silver = new Ressource("Silber", 2, Helper.random(1, 40), 2,  2, 10, 50);
 	Ressource gold = new Ressource("Gold", 3, Helper.random(1, 30), 2, 2, 12, 30);
 	Ressource jewel= new Ressource("Juwel", 5, Helper.random(1, 10), 3, 1, 14, 10);
-		
+	
+	
 	public Planet(String name, Solarsystem parent) {
 		this.name = generateName();
 		this.parent = parent;
@@ -63,9 +64,12 @@ public class Planet implements Generetable, Observer{
 	}
 	
 	public int grow(int number) {
-		int x= number;
-		return x;
-	}
+		if(number%Round.getRound() == 0) {
+			return 1;
+		}
+		return 0;
+	}	
+	
 
 	public void income() {
 		 if(this.ressource.contains(bronze)) {
