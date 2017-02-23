@@ -2,10 +2,12 @@ package de.nemewesa.level;
 
 import java.util.ArrayList;
 
+import de.nemewesa.app.Observer;
+import de.nemewesa.app.Round;
 import de.nemewesa.helper.Helper;
 import de.nemewesa.modules.Defence;
 
-public class Planet implements Generetable{
+public class Planet implements Generetable, Observer{
 	
 	public Moon moonName;
 	public String citizen;
@@ -14,6 +16,7 @@ public class Planet implements Generetable{
 	public Defence defenceName;
 	public boolean minePosible;
 	public String name;
+	public Round round;
 	// size des planeten zwischen 
 	public int size;
 	public Solarsystem parent;
@@ -31,6 +34,8 @@ public class Planet implements Generetable{
 		this.name = generateName();
 		this.parent = parent;
 		this.size = Helper.random(100, 1000);
+		this.round  = Round.getRound();
+		this.round.registerObserver(this);
 		/*
 		 * Per Zufall entscheiden anhand der Werte von Ressourcen
 		 * ob ein Planet auch die Ressourcen hat
@@ -91,6 +96,11 @@ public class Planet implements Generetable{
 	public static void defending()
 	{
 		//defencePower
+	}
+
+	@Override
+	public void update(int round) {
+		System.out.println(this.name + " lautet die Runde " + round + " ein.");
 	}
 
 }
