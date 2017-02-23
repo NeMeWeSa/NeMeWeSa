@@ -26,10 +26,10 @@ public class Level{
 		String sectorname = null;
 
 		// Pfad unter Mac
-		String filename = "level/" + Level.level + "/sectors/sectors.txt";
+		// String filename = "level/" + Level.level + "/sectors/sectors.txt";
 
 		// Pfad unter Windows
-		// String filename = "level\\" + Level.level + "\\sectors\\sectors.txt";
+		String filename = "level\\" + Level.level + "\\sectors\\sectors.txt";
 
 		try (BufferedReader br = new BufferedReader(new FileReader(filename))) {
 
