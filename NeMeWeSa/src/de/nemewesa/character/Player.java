@@ -1,5 +1,10 @@
 package de.nemewesa.character;
 
+import java.io.BufferedOutputStream;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.util.ArrayList;
 
 import de.nemewesa.app.App;
@@ -78,5 +83,22 @@ public class Player implements Observer{
 	public void update(int round) {
 		System.out.println(this.name + " lautet die Runde " + round + " ein.");
 	}
+	
+	public void save(String filename) {
+		
+		File f = new File(filename);
+		String str = this.toString();
+		
+		try (BufferedOutputStream fos = new BufferedOutputStream(new FileOutputStream(f /*, true => wenn angehaengt werden soll */));) {
+			fos.write(str.getBytes());
+		}
+		catch(FileNotFoundException e){
+			System.out.println("FileNotFoundException: " + e.getMessage());
+		}
+		catch(IOException e) {
+			System.out.println("IOException: " + e.getMessage());
+		}		
+		
+	}	
 
 }

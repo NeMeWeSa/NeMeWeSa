@@ -24,7 +24,7 @@ public class App {
 		App app = new App();
 		app.createNewLevel(1);
 		app.createPlayer();
-		//app.runTests();
+		app.runTests();
 	}
 
 	public void createNewLevel(int lev){
@@ -48,24 +48,33 @@ public class App {
 		System.out.println("[NeMeWeSa] Willkommen im NeMeWeSa " + player.getName());
 		System.out.println(player);
 		
-		this.round.setNewRound();
-		this.round.setNewRound();
+
 		
 	}
 
 	public void runTests(){
+		
+		
+		//this.round.setNewRound();
+		//this.round.setNewRound();
+		
+		
+		this.player.save("level\\" + Level.level + "\\saves\\player.dat");
+		
+		
 
-//			   for(int i = 0; i < 10; i++){
-//				   
-//				   int myVar = Helper.random(0, 2);
-//				   
-//				   System.out.println(myVar);
-//				   
-//			   }
+//	   for(int i = 0; i < 10; i++){
+//		   
+//		   int myVar = Helper.random(0, 2);
+//		   
+//		   System.out.println(myVar);
+//		   
+//	   }
 
 		// Peters Teil.
 		// Erstellte Objekte um zu schauen ob die methoden funktionieren
 
+		/*
 		SpaceStation alpha = new SpaceStation();
 		alpha.stationName = "alpha";
 
@@ -105,7 +114,8 @@ public class App {
 		System.out.println("Fighter Health = "+ rambo.shipHealth);
 		System.out.println("RedAlien Health = "+ redAlien.enemyHealth);
 		System.out.println("Ist Luna erobert " + luna.captured);
-
+*/
+		
 	}
 
 }

@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import de.nemewesa.character.Human;
 import de.nemewesa.app.Observer;
 import de.nemewesa.app.Round;
+import de.nemewesa.app.Savable;
 import de.nemewesa.helper.Helper;
 import de.nemewesa.modules.Defence;
 

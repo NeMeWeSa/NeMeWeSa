@@ -7,11 +7,11 @@ public class Round implements Subject{
 	private static final Round roundInstance = new Round();
 	private ArrayList<Observer> observers;
 	
-	int round = 0;
+	private int round = 0;
 	
 	// Singelton Pattern
 	private Round(){
-		observers = new ArrayList<Observer>();		
+		observers = new ArrayList<Observer>();
 	}
 
 	// Die Instanz kann nur ueber getInstance geholt werden 
