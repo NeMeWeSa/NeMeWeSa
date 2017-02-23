@@ -9,6 +9,7 @@ public class Transporter extends Spaceship{
 	
 	
 	
+	private static Object resourceName;
 	public Storage capacity;
 
 	public Transporter(String shipName, String shipType, int shipHealth, int shipStrange, int shipFuel, Storage capacity) {
@@ -38,6 +39,7 @@ public class Transporter extends Spaceship{
 	public int pickUp(Planet start)
 	{	
 		// Es geht nicht weil ich ein Inhalt von einer ArrayList von ner anderen abziehen will und die zwei werte haben
+		// 
 		if(Resource.lot < 1000 )
 		{
 			for(int weight: Planet.ressource)

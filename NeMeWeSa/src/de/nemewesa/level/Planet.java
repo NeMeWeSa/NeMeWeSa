@@ -11,9 +11,10 @@ import de.nemewesa.modules.Defence;
 
 public class Planet implements Generetable, Observer{
 	
+	public static Object resourceName;
 	public Moon moonName;
 	public int citizen;
-	public ArrayList<Storage> ressource = new ArrayList<>();
+	public static ArrayList<Storage> ressource = new ArrayList<>();
 	public SpaceStation stationName;
 	public Defence defenceName;
 	public boolean captured = false;
