@@ -3,7 +3,6 @@ package de.nemewesa.level;
 import java.util.ArrayList;
 
 
-import de.nemewesa.character.Human;
 import de.nemewesa.app.Observer;
 import de.nemewesa.app.Round;
 import de.nemewesa.helper.Helper;
@@ -12,6 +11,7 @@ import de.nemewesa.modules.Defence;
 public class Planet implements Generetable, Observer{
 	
 	public Moon moonName;
+	// max 20 einwohner
 	public int citizen;
 	public ArrayList<Ressource> ressource = new ArrayList<>();
 	public SpaceStation stationName;
@@ -19,6 +19,7 @@ public class Planet implements Generetable, Observer{
 	public boolean captured = false;
 	public String name;
 	public Round round;
+	public int storage;
 	// size des planeten zwischen 
 	public int size;
 	public Solarsystem parent;
@@ -26,21 +27,20 @@ public class Planet implements Generetable, Observer{
 	/* 
 	 * wenn das raumschiff zb. 10 plaetze frei hat
 	 * laesst sich ueber den space festlegen wieviel man tragen kann
-	 * Name, value, amount, space, grow(in steps), dropChance 
+	 * Name, value, amount, int mine, space, grow(in steps), dropChance 
 	 */
-	Ressource bronze = new Ressource("Bronze", 1, Helper.random(1, 50), 2, 4, 85);
-	Ressource silver = new Ressource("Silber", 2, Helper.random(1, 40),  2, 6, 50);
-	Ressource gold = new Ressource("Gold", 3, Helper.random(1, 30), 2, 8, 30);
-	Ressource jewel= new Ressource("Juwel", 5, Helper.random(1, 10), 1, 10, 10);
-	
-	// max 20 einwohner
-	Human alien = new Human("Aliens", Helper.random(0, 20));
-	
+	Ressource bronze = new Ressource("Bronze", 1, Helper.random(1, 50), 2, 2, 8, 85);
+	Ressource silver = new Ressource("Silber", 2, Helper.random(1, 40), 2,  2, 10, 50);
+	Ressource gold = new Ressource("Gold", 3, Helper.random(1, 30), 2, 2, 12, 30);
+	Ressource jewel= new Ressource("Juwel", 5, Helper.random(1, 10), 3, 1, 14, 10);
+		
 	public Planet(String name, Solarsystem parent) {
 		this.name = generateName();
 		this.parent = parent;
 		this.size = Helper.random(100, 1000);
-		this.citizen = alien.amount;
+		this.citizen = Helper.random(1, 20);
+		// Die Menge die die leute sammeln koennen
+		this.storage = (this.citizen*2)+5;
 		this.round  = Round.getRound();
 		this.round.registerObserver(this);
 		/*
@@ -61,10 +61,25 @@ public class Planet implements Generetable, Observer{
 		}
 	}
 	
-//	public int income() {
-//		//sd
-//		return int;
-//	}
+	public int grow(int number) {
+		int x= number;
+		return x;
+	}
+
+	public void income() {
+		 if(this.ressource.contains(bronze)) {
+			 System.out.println("bronze");
+		 }
+		 if(this.ressource.contains(silver)) {
+			 System.out.println("silver");
+		 }
+		 if(this.ressource.contains(gold)) {
+			 System.out.println("gold");
+		 }
+		 if(this.ressource.contains(jewel)) {
+			 System.out.println("juwel");
+		 }
+	}
 
 	@Override
 	public String getName() {
