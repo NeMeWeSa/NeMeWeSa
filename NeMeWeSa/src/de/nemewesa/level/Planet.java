@@ -14,11 +14,13 @@ public class Planet implements Generetable{
 	public Defence defenceName;
 	public boolean minePosible;
 	public String name;
+	// size des planeten zwischen 
+	public int size;
 	public Solarsystem parent;
 	public String[] firstname = {"Ben", "Pe", "To", "Jau", "Ja", "Ter", "Masz", "Res", "Min", "Ro", "Sen", "Ta", "Bue", "Ur", "Ban", "Iak", "Dzi", "Ko", "Wi", "Cki"};
 	/* wenn das raumschiff zb. 10 plaetze frei hat
 	 * laesst sich ueber den space festlegen wieviel man tragen kann
-	 * Name, value, amount, space, grow(in steps), dropChance
+	 * Name, value, amount, space, grow(in steps), dropChance 
 	 */
 	Ressource bronze = new Ressource("Bronze", 1, 50, 2, 4, 85);
 	Ressource silver = new Ressource("Silber", 2, 40,  2, 6, 50);
@@ -28,6 +30,7 @@ public class Planet implements Generetable{
 	public Planet(String name, Solarsystem parent) {
 		this.name = generateName();
 		this.parent = parent;
+		this.size = Helper.random(100, 1000);
 		/*
 		 * Per Zufall entscheiden anhand der Werte von Ressourcen
 		 * ob ein Planet auch die Ressourcen hat
@@ -49,6 +52,13 @@ public class Planet implements Generetable{
 	@Override
 	public String getName() {
 		return this.name;
+	}
+	public int getSize() {
+		return this.size;
+	}
+
+	public ArrayList<Ressource> getRessource() {
+		return this.ressource;
 	}
 
 	@Override

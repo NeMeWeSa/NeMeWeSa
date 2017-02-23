@@ -34,10 +34,10 @@ public class App {
 	
 	public void createPlayer(){
 		
-		Scanner scanner = new Scanner(System.in);
-		System.out.println("[NeMeWeSa] Bitte geben Sie einen Spielernamen ein > ");
-		String playerName = scanner.nextLine();
-		player = new Player(playerName);
+		//Scanner scanner = new Scanner(System.in);
+		//System.out.println("[NeMeWeSa] Bitte geben Sie einen Spielernamen ein > ");
+		//String playerName = scanner.nextLine();
+		player = new Player("tom");
 		player.setCurrentPlanet(level.getSector(0).getSolarsystem(0).getPlanet(0));
 		player.setHomePlanet(player.getCurrentPlanet());
 		player.setHomeSolarsystem(level.getSector(0).getSolarsystem(0));
@@ -45,7 +45,7 @@ public class App {
 		player.addOwnership(player.getHomePlanet());
 	
 		System.out.println("[NeMeWeSa] Willkommen im NeMeWeSa " + player.getName());
-		System.out.println(player);
+		System.out.println(player);	
 		
 	}
 
