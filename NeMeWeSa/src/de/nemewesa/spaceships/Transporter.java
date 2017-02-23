@@ -1,6 +1,6 @@
 package de.nemewesa.spaceships;
 
-import de.nemewesa.building.Storage;
+import de.nemewesa.buildings.Storage;
 import de.nemewesa.character.Enemy;
 import de.nemewesa.level.Planet;
 import de.nemewesa.level.SpaceStation;

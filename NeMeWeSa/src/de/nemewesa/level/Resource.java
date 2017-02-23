@@ -1,7 +1,5 @@
 package de.nemewesa.level;
 
-import de.nemewesa.helper.Helper;
-
 public class Resource {
 	
 	public String resourceName;

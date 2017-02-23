@@ -2,11 +2,8 @@ package de.nemewesa.level;
 
 import java.util.ArrayList;
 
-
 import de.nemewesa.app.Observer;
 import de.nemewesa.app.Round;
-import de.nemewesa.app.Savable;
-import de.nemewesa.building.Storage;
 import de.nemewesa.helper.Helper;
 import de.nemewesa.modules.Defence;
 
@@ -68,7 +65,7 @@ public class Planet implements Generetable, Observer{
 	}
 	
 	
-	public void mine(Ressource res) {}
+	public void mine(Resource res) {}
 	
 
 	public void income() {
