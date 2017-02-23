@@ -1,12 +1,9 @@
 package de.nemewesa.spaceships;
 
-import de.nemewesa.character.Enemy;
-import de.nemewesa.level.Moon;
-
 public class Fighter extends Spaceship {
 	
 	public Fighter(){
-		super("Rambo","Fighter",100,10,200);
+		super("Rambo","Fighter",100,20,200);
 	}
 	
 //	public Fighter(String shipName, String shipType, int shipHealth, int shipStrange, int shipFuel)
