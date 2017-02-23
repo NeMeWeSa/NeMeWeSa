@@ -64,11 +64,13 @@ public class Planet implements Generetable, Observer{
 	}
 	
 	public int grow(int number) {
-		if(number%Round.getRound() == 0) {
+		if(number%this.round.getRound() == 0) {
 			return 1;
 		}
 		return 0;
-	}	
+	}
+	
+	public void mine(Ressource res) {}
 	
 
 	public void income() {

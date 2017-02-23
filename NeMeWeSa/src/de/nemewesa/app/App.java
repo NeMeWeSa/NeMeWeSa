@@ -39,7 +39,9 @@ public class App {
 	
 		System.out.println("[NeMeWeSa] Willkommen im NeMeWeSa " + player.getName());
 		System.out.println(player);
-		
+//		this.round.setNewRound();
+//		this.round.setNewRound();
+//		player.getCurrentPlanet().income();
 	}
 
 	public void runTests(){
