@@ -2,10 +2,8 @@ package de.nemewesa.level;
 
 import java.util.ArrayList;
 
-
 import de.nemewesa.app.Observer;
 import de.nemewesa.app.Round;
-import de.nemewesa.app.Savable;
 import de.nemewesa.helper.Helper;
 import de.nemewesa.modules.Defence;
 
@@ -16,6 +14,7 @@ public class Planet implements Generetable, Observer{
 	// max 20 einwohner
 	public int citizen;
 	public ArrayList<Resource> resource = new ArrayList<>();
+
 	public SpaceStation stationName;
 	public Defence defenceName;
 	public boolean captured = false;
@@ -64,6 +63,7 @@ public class Planet implements Generetable, Observer{
 		}
 	}
 	
+
 	public void generateResource(Resource res) {
 		if(this.resource.contains(res)) {
 			if(res.getGrow() % round.getRound() == 0) {
@@ -71,7 +71,8 @@ public class Planet implements Generetable, Observer{
 			}			
 		}			
 	}		
-	
+
+
 	public void mine(Resource res) {
 		if(captured = true) {
 			if(this.resource.contains(res)) {

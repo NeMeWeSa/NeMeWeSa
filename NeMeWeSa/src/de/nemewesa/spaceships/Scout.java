@@ -3,10 +3,10 @@ package de.nemewesa.spaceships;
 import java.util.ArrayList;
 import java.util.List;
 
+import de.nemewesa.buildings.Storage;
 import de.nemewesa.character.Enemy;
 import de.nemewesa.level.Planet;
 import de.nemewesa.level.SpaceStation;
-import de.nemewesa.level.Storage;
 
 public class Scout extends Transporter{
 	
@@ -27,23 +27,23 @@ public class Scout extends Transporter{
 	}
 	
 	//Hier wird der Rohsrtoff vom gewählten PLANETEN AUFGENOMMEN
-	public int pickUp(Planet start)
-	{	
-		 return  start.resourceStock = start.resourceStock - capacity;
-	 
-	}
-	
-	// Die Frage ist ob man wirklich diese Methode braucht?
-	public void transport()
-	{
-		
-	}
-	
-	// Hier wird der Rohstoff in der jeweiligen Raumstation abgelegt
-	
-	
-	public int dropDown(SpaceStation goal)
-	{
-		return goal.warehouse = goal.warehouse + capacity;
-	}
+//	public int pickUp(Planet start)
+//	{	
+//		 return  start.resourceStock = start.resourceStock - capacity;
+//	 
+//	}
+//	
+//	// Die Frage ist ob man wirklich diese Methode braucht?
+//	public void transport()
+//	{
+//		
+//	}
+//	
+//	// Hier wird der Rohstoff in der jeweiligen Raumstation abgelegt
+//	
+//	
+//	public int dropDown(SpaceStation goal)
+//	{
+//		return goal.warehouse = goal.warehouse + capacity;
+//	}
 }
