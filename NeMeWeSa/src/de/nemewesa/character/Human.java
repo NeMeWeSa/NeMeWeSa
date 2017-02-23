@@ -1,30 +1,18 @@
 package de.nemewesa.character;
 
+
+import de.nemewesa.level.Planet;
+
 public class Human {
 	
+	public int amount;
+	public String name;
+	public Planet parent;
 	
 	
-	public static void build()
-	{
-		
-	}
-	
-	public static void collect()
-	{
-		
-	}
-	
-	public static void fight()
-	{
-		
-	}
-
-	public static void mine()
-	{
-	
-		
-//		
-//		stock.add(resourceName);
+	public Human(String name, int amount) {
+		this.amount = amount;
+		this.name = name;
 	}
 	
 }
