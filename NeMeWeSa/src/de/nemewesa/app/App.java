@@ -17,6 +17,7 @@ public class App {
 	public static final int PLAYER_AP = 20;
 	private Player player;
 	private Level level;
+	private Round round = Round.getRound();
 
 	public static void main(String[] args) throws Exception {
 
@@ -45,7 +46,10 @@ public class App {
 		player.addOwnership(player.getHomePlanet());
 	
 		System.out.println("[NeMeWeSa] Willkommen im NeMeWeSa " + player.getName());
-		System.out.println(player);	
+		System.out.println(player);
+		
+		this.round.setNewRound();
+		this.round.setNewRound();
 		
 	}
 
