@@ -43,20 +43,25 @@ public class App {
 		System.out.println("[NeMeWeSa] Willkommen im NeMeWeSa " + player.getName());
 		System.out.println(player);
 		
-		System.out.println(player.getCurrentPlanet().resource.get(0).amount);
+		 
+		this.round.setNewRound();		
+		System.out.println(" Amount index 0  = " + player.getCurrentPlanet().resource.get(0).amount);
+		System.out.println(player.getCurrentPlanet().resource.get(0).getGrow());
+		System.out.println(round.getRound());
+		
 		player.getCurrentPlanet().mine(player.getCurrentPlanet().resource.get(0));
-		System.out.println(player.getCurrentPlanet().resource.get(0).amount);
+		System.out.println(" ress = " + player.getCurrentPlanet().resource.get(0).amount);
 		player.getCurrentPlanet().mine(player.getCurrentPlanet().resource.get(0));
-		System.out.println(player.getCurrentPlanet().resource.get(0).amount);
-		player.getCurrentPlanet().mine(player.getCurrentPlanet().resource.get(0));
-		System.out.println(player.getCurrentPlanet().resource.get(0).amount);
-		player.getCurrentPlanet().mine(player.getCurrentPlanet().resource.get(0));
+
+		player.getCurrentPlanet().generateResource(player.getCurrentPlanet().resource.get(0));
+		System.out.println(" ress = " + player.getCurrentPlanet().resource.get(0).amount);
+		this.round.setNewRound();
+		player.getCurrentPlanet().generateResource(player.getCurrentPlanet().resource.get(0));
+		System.out.println(" ress = " + player.getCurrentPlanet().resource.get(0).amount);
+		this.round.setNewRound();
+
 		
-		
-		
-		
-//		player.getCurrentPlanet().mine();
-		
+//		player.getCurrentPlanet().mine();		
 //		this.round.setNewRound();
 //		this.round.setNewRound();
 //		player.getCurrentPlanet().income();

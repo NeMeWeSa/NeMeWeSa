@@ -30,10 +30,11 @@ public class Planet implements Generetable, Observer{
 	 * laesst sich ueber den space festlegen wieviel man tragen kann
 	 * Name, value, amount, int mine, space, grow(in steps), dropChance 
 	 */
-	Resource bronze = new Resource("Bronze", 1, Helper.random(10, 50), 2, 2, 8, 85);
-	Resource silver = new Resource("Silber", 2, Helper.random(5, 40), 2,  2, 10, 50);
-	Resource gold = new Resource("Gold", 3, Helper.random(3, 30), 2, 2, 12, 30);
-	Resource jewel= new Resource("Juwel", 5, Helper.random(1, 10), 3, 1, 14, 10);
+	// 10 50,  5 40 , 3 30,   1 10
+	Resource bronze = new Resource("Bronze", 1, 50, 2, 2, 8, 85);
+	Resource silver = new Resource("Silber", 2,  40, 2,  2, 10, 50);
+	Resource gold = new Resource("Gold", 3, 30, 2, 2, 12, 30);
+	Resource jewel= new Resource("Juwel", 5, 10, 3, 1, 14, 10);
 	
 	
 	public Planet(String name, Solarsystem parent) {
@@ -68,11 +69,12 @@ public class Planet implements Generetable, Observer{
 		if(this.resource.contains(res)) {
 			if(res.getGrow() % round.getRound() == 0) {
 				res.amount +=1;
-			}			
-		}			
+			}		
+		}		
 	}		
 
-
+	// player.getCurrentPlanet().mine(player.getCurrentPlanet().resource.get(0));
+	// zum farmen (0) wäre nun bronze WENN bronze vorhanden
 	public void mine(Resource res) {
 		if(captured = true) {
 			if(this.resource.contains(res)) {
