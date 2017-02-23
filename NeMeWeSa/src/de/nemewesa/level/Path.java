@@ -1,10 +1,20 @@
 package de.nemewesa.level;
 
 import java.util.*;
+import de.nemewesa.character.Player;
+import de.nemewesa.helper.Helper;
+import de.nemewesa.app.App;
+import de.nemewesa.level.Generetable;
+import de.nemewesa.level.Planet;
+import de.nemewesa.level.Solarsystem;
+import de.nemewesa.level.Asteroid;
 
-public class Path {
+public class Path implements Generetable{
+	
     //Asteroiden,die sich aufm Weg befinden
 	public ArrayList<Asteroid>asteroids = new ArrayList<>();
+	public Asteroid asteroid;
+	public Player player;
 	
 	//Laenge,Breite und Name des Weges
 	public int distance;
@@ -14,15 +24,17 @@ public class Path {
 	public char[][] path;  //Der Weg als Array
 	public int nblin, nbcol;
 	public char tmp; //Spielerposition
+	public String[] name0 ={"Las","Wus","Gas","Gis","Nos","Los","Min", "Ro", "Sen", "Ta", "Bue", "Ur", "Ban", "Iak","Sol","Fa","Man","Yuh"};
 	
 	//Konstruktor
-	public Path(String name, int width, int distance){
-		this.name = name;
-		this.width = width;
-		this.distance = distance;
+	public Path(){
+		this.name = generateName();
+		this.width = Helper.random(3, 10);
+		this.distance = Helper.random(10,20);
 		
-		nblin = width;
-		nbcol = distance;
+		nblin = width;  //Anzahl der Reihen
+		nbcol = distance;  //Anzahl der Spalten
+		
 		path = new char[nblin][nbcol];
 		for (int i=0; i<nblin; i++){
 			for(int j=0; j<nbcol; j++){
@@ -31,17 +43,32 @@ public class Path {
 	  }
 	}
 	
+	public String generateName(){
+		String str1 = name0[Helper.random(0, name0.length)];
+		String str2 = name0[Helper.random(0, name0.length)];
+		String str3 = str1 + str2.toLowerCase();
+		return str3;
+	}
+	
 	
 	public String getName(){
-		return name;
+		return this.name;
 	}
 	
 	public int getDistance(){
-		return distance;
+		return this.distance;
 	}
 	
 	public int getWidth(){
-		return width;
+		return this.width;
+	}
+	
+	public void setDistance(){
+		this.distance = Helper.random(10,20);
+	}
+	
+	public void setWidth(){
+		this.width = Helper.random(3,10);
 	}
 	
 	//Asteroiden aufm Weg hinzufuegen
@@ -50,7 +77,7 @@ public class Path {
 		for (int i=0;i<path.length;i++){
 			for (int j=0; j<path.length;j++){
 				path[0][0] = 'P'; // P ist der Spieler(Player)
-			int random = (int)(Math.random()*4);
+			int random = Helper.random(0, 3);
 			switch(random){
 			case 0: path[i][j] = 'A'; break;
 			case 1: path[i][j] = ' '; break;
@@ -59,11 +86,13 @@ public class Path {
 			}
 		}
 	}
-//		this.asteroids.add();
+
 		System.out.println();
   }
 	public void showPath(){
-		System.out.println();
+		System.out.println("Welcome to the path");
+		System.out.println(toString()+"\n");
+		System.out.println("-------------------------------------------------------\n");
 		for (int i=0; i<nblin; i++){
 			for(int j=0; j<nbcol; j++){
 			
@@ -71,10 +100,40 @@ public class Path {
 			}
 			System.out.println(" | ");
 		}
-		System.out.println();
+		System.out.println("--------------------------------------------------------\n");
 	}
 	
+	public void howToMove(){
+		System.out.println();
+		System.out.println("Pay close attention! you are the 'P'and the characters A are Asteroids!!!");
+		System.out.println("To move, press:");
+		System.out.println("8 for up");
+		System.out.println("2 for down");
+		System.out.println("4 for left");
+		System.out.println("and 6 for rigth");
+		System.out.println("it's better for you to use the numeric keybord.\n");
+		
+		try{
+			int i=0;
+			while(i<10){
+			Scanner sc1 = new Scanner(System.in);
+			char m = sc1.nextLine().charAt(0);
+			switch (m){
+			case '8' : moveUp(); break;
+			case '2' : moveDown(); break;
+			case '4' : moveLeft(); break;
+			case '6' : moveRigth(); break;
+			default : System.out.println("wrong button!!!");
+			
+			sc1.close();
+	        }
+	      }i++;
+		}catch(Exception e){}
+	}
+	
+
     //sich auf dem Weg bewegen
+	
 	//Bewegen nach oben
 	public void moveUp(){
 		for (int i=0;i<nblin;i++){
@@ -84,7 +143,11 @@ public class Path {
 					tmp = path[i][j]; //Spieler speichern.
 					path[i][j] = ' '; //alte Position verlassen.
 					path[i-1][j] = tmp; //neu Position.
-				    
+//					if('P' ='A'){
+//						System.out.println("ohh you collided with "+asteroid.toString());
+//						System.out.println("your AP is now "+(this.player.getAp() - this.asteroid.damage));
+//					}
+				    break;
 				}
 			}
 		}
@@ -100,7 +163,11 @@ public class Path {
 					tmp = path[i][j]; //Spieler speichern.
 					path[i][j] = ' '; //alte Position verlassen.
 					path[i+1][j] = tmp; //neu Position.
-					return; 
+					if(tmp =='A'){
+						System.out.println("ohh you collided with "+asteroid.toString());
+						System.out.println("your AP is now "+(this.player.getAp() - this.asteroid.damage));
+					}
+					break; 
 				}
 			}
 		}
@@ -116,11 +183,13 @@ public class Path {
 					tmp = path[i][j]; //Spieler speichern.
 					path[i][j] = ' '; //alte Position verlassen.
 					path[i][j+1] = tmp; //neu Position.
-					while(tmp !=' '){
-						System.out.println("ohh you collided with a asteroid");
-						System.out.println("");
+					if(tmp =='A'){
+						System.out.println("ohh you collided with "+asteroid.toString());
+						System.out.println("your AP is now "+(this.player.getAp() - this.asteroid.damage));
 					}
 					break;
+				}else{
+					System.out.println("Welcome to the next planet!!");
 				}
 			}
 		}
@@ -136,12 +205,44 @@ public class Path {
 					tmp = path[i][j]; //Spieler speichern.
 					path[i][j] = ' '; //alte Position verlassen.
 					path[i][j-1] = tmp; //neu Position.
-				   
+					if(tmp =='A'){
+						System.out.println("ohh you collided with "+asteroid.toString());
+						System.out.println("your AP is now "+(this.player.getAp() - this.asteroid.damage));
+					}
+				    break;
+				}else{
+					System.out.println("You turned back to your last planet!!");
 				}
 			}
 		}
 	}
 		showPath();
-  }	
+  }
+
+
+	@Override
+	public void generate(int element) {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+	@Override
+	public void printChildren() {
+		// TODO Auto-generated method stub
+		
+	}	
+	
+	
+	public String toString(){
+		return "Path's name: "+this.name+"\nWidth = "+this.width+"\nDistance = "+this.distance;
+	}
+	
+	
+	
+	
+	
+	
+	
 	
 }
