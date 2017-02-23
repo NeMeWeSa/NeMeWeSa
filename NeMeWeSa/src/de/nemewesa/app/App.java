@@ -9,7 +9,7 @@ public class App {
 	public static final int PLAYER_AP = 20;
 	private Player player;
 	private Level level;
-	private Round round = Round.getRound();
+	private Round round = Round.getRoundInstance();
 
 	public static void main(String[] args) throws Exception {
 
@@ -40,8 +40,6 @@ public class App {
 		System.out.println("[NeMeWeSa] Willkommen im NeMeWeSa " + player.getName());
 		System.out.println(player);
 		
-
-		
 	}
 
 	public void runTests(){
@@ -51,7 +49,8 @@ public class App {
 		//this.round.setNewRound();
 		
 		
-		this.player.save("level\\" + Level.level + "\\saves\\player.dat");
+		//this.player.saveAsString("level\\" + Level.level + "\\saves\\playerString.dat");
+		//this.player.save("level\\" + Level.level + "\\saves\\playerObj.dat");
 		
 		
 

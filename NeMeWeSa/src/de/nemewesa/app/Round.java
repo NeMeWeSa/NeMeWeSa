@@ -15,7 +15,7 @@ public class Round implements Subject{
 	}
 
 	// Die Instanz kann nur ueber getInstance geholt werden 
-	public static Round getRound(){
+	public static Round getRoundInstance(){
 		return roundInstance;
 	}
 	
@@ -47,5 +47,11 @@ public class Round implements Subject{
 		this.round += 1;
 		roundChanged();
 	}
+
+	public int getRound() {
+		return round;
+	}
+	
+	
 
 }

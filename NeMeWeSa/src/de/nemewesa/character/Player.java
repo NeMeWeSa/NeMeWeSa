@@ -5,6 +5,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 
 import de.nemewesa.app.App;
@@ -17,17 +18,17 @@ import de.nemewesa.level.Solarsystem;
 public class Player implements Observer{
 	
 	private String name;
-	private Planet currentPlanet = null;
-	private Planet homePlanet = null;
-	private Solarsystem homeSolarsystem = null;
-	private ArrayList<Generetable> ownership = new ArrayList<>();
-	private Round round;
+	private transient Planet currentPlanet = null;
+	private transient Planet homePlanet = null;
+	private transient Solarsystem homeSolarsystem = null;
+	private transient ArrayList<Generetable> ownership = new ArrayList<>();
+	private transient Round round;
 	
 	private final transient int ap = App.PLAYER_AP;
 	
 	public Player(String name){
 		this.name = name;
-		this.round = Round.getRound();
+		this.round = Round.getRoundInstance();
 		this.round.registerObserver(this);
 	}
 	
@@ -84,7 +85,7 @@ public class Player implements Observer{
 		System.out.println(this.name + " lautet die Runde " + round + " ein.");
 	}
 	
-	public void save(String filename) {
+	public void saveAsString(String filename) {
 		
 		File f = new File(filename);
 		String str = this.toString();
@@ -99,6 +100,39 @@ public class Player implements Observer{
 			System.out.println("IOException: " + e.getMessage());
 		}		
 		
+	}
+	
+	public void save(String filename){
+
+		//Savable h = this;
+		Runnable thread = () -> {
+
+		//Thread thread = new Thread( new Runnable() {
+			
+			//public void run() {
+			
+				try (ObjectOutputStream out = 
+						new ObjectOutputStream(
+							new BufferedOutputStream(
+								new FileOutputStream(filename)));) {
+					
+					//out.writeObject(this);
+					out.writeObject(this);
+					out.close();
+				} 
+				catch (FileNotFoundException e) {
+					e.printStackTrace();
+				} 
+				catch (IOException e) {
+					e.printStackTrace();
+				}
+		
+		};
+		new Thread(thread).start();
+				
+		//}});
+		//thread.start();				
+	
 	}	
 
 }
