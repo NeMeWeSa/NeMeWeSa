@@ -57,7 +57,7 @@ public class Planet implements Generetable, Observer{
 		if(Helper.random(0, 100)<silver.dropRate) {
 			this.resource.add(silver);
 		}
-		if(Helper.random(0, 100)<gold.dropRate) {
+		if(Helper.random(0, 100)<gold.dropRate) { 
 			this.resource.add(gold);
 		}
 		if(Helper.random(0, 100)<jewel.dropRate) {
