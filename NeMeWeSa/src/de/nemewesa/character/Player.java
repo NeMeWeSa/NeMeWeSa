@@ -1,24 +1,29 @@
 package de.nemewesa.character;
 
+import java.util.ArrayList;
+
 import de.nemewesa.app.App;
+import de.nemewesa.app.Observer;
+import de.nemewesa.app.Round;
 import de.nemewesa.level.Generetable;
 import de.nemewesa.level.Planet;
 import de.nemewesa.level.Solarsystem;
 
-import java.util.ArrayList;
-
-public class Player {
+public class Player implements Observer{
 	
 	private String name;
 	private Planet currentPlanet = null;
 	private Planet homePlanet = null;
 	private Solarsystem homeSolarsystem = null;
 	private ArrayList<Generetable> ownership = new ArrayList<>();
+	private Round round;
 	
 	private final transient int ap = App.PLAYER_AP;
 	
 	public Player(String name){
 		this.name = name;
+		this.round = Round.getRound();
+		this.round.registerObserver(this);
 	}
 	
 	public String toString(){
@@ -67,6 +72,11 @@ public class Player {
 
 	public int getAp() {
 		return ap;
+	}
+
+	@Override
+	public void update(int round) {
+		System.out.println(this.name + " lautet die Runde " + round + " ein.");
 	}
 
 }
