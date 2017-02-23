@@ -33,10 +33,10 @@ public class Sector implements Generetable{
 		String solarsystemname = null;
 
 		// Pfad unter Mac
-		String filename = "level/" + Level.level + "/solarsystems/" + element + "/solarsystems.txt";
+		// String filename = "level/" + Level.level + "/solarsystems/" + element + "/solarsystems.txt";
 
 		// Pfad unter Windows
-		// String filename = "level\\" + Level.level + "\\solarsystems\\" + element + "\\solarsystems.txt";
+		String filename = "level\\" + Level.level + "\\solarsystems\\" + element + "\\solarsystems.txt";
 
 		try (BufferedReader br = new BufferedReader(new FileReader(filename))) {
 
