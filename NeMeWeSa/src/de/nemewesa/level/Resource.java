@@ -2,7 +2,7 @@ package de.nemewesa.level;
 
 import de.nemewesa.helper.Helper;
 
-public class Ressource {
+public class Resource {
 	
 	public String resourceName;
 	/*
@@ -19,9 +19,7 @@ public class Ressource {
 	public int dropRate;
 	public int mine;
 	
-	
-	
-	public Ressource(String resourceName, int value, int amount, int mine, int space, int grow, int dropChance)
+	public Resource(String resourceName, int value, int amount, int mine, int space, int grow, int dropChance)
 	{ 
 		this.resourceName = resourceName;
 		this.value = value;

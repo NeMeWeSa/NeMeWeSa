@@ -3,9 +3,9 @@ package de.nemewesa.level;
 import java.util.ArrayList;
 
 
-import de.nemewesa.character.Human;
 import de.nemewesa.app.Observer;
 import de.nemewesa.app.Round;
+import de.nemewesa.app.Savable;
 import de.nemewesa.helper.Helper;
 import de.nemewesa.modules.Defence;
 
@@ -13,13 +13,19 @@ public class Planet implements Generetable, Observer{
 	
 	public static Object resourceName;
 	public Moon moonName;
+	// max 20 einwohner
 	public int citizen;
+<<<<<<< HEAD
 	public static ArrayList<Storage> ressource = new ArrayList<>();
+=======
+	public ArrayList<Resource> resource = new ArrayList<>();
+>>>>>>> branch 'master' of https://github.com/NeMeWeSa/NeMeWeSa.git
 	public SpaceStation stationName;
 	public Defence defenceName;
 	public boolean captured = false;
 	public String name;
 	public Round round;
+	public int storage;
 	// size des planeten zwischen 
 	public int size;
 	public Solarsystem parent;
@@ -27,45 +33,63 @@ public class Planet implements Generetable, Observer{
 	/* 
 	 * wenn das raumschiff zb. 10 plaetze frei hat
 	 * laesst sich ueber den space festlegen wieviel man tragen kann
-	 * Name, value, amount, space, grow(in steps), dropChance 
+	 * Name, value, amount, int mine, space, grow(in steps), dropChance 
 	 */
-	Ressource bronze = new Ressource("Bronze", 1, Helper.random(1, 50), 2, 4, 85);
-	Ressource silver = new Ressource("Silber", 2, Helper.random(1, 40),  2, 6, 50);
-	Ressource gold = new Ressource("Gold", 3, Helper.random(1, 30), 2, 8, 30);
-	Ressource jewel= new Ressource("Juwel", 5, Helper.random(1, 10), 1, 10, 10);
+	Resource bronze = new Resource("Bronze", 1, Helper.random(1, 50), 2, 2, 8, 85);
+	Resource silver = new Resource("Silber", 2, Helper.random(1, 40), 2,  2, 10, 50);
+	Resource gold = new Resource("Gold", 3, Helper.random(1, 30), 2, 2, 12, 30);
+	Resource jewel= new Resource("Juwel", 5, Helper.random(1, 10), 3, 1, 14, 10);
 	
-	// max 20 einwohner
-	Human alien = new Human("Aliens", Helper.random(0, 20));
 	
 	public Planet(String name, Solarsystem parent) {
 		this.name = generateName();
 		this.parent = parent;
 		this.size = Helper.random(100, 1000);
-		this.citizen = alien.amount;
-		this.round  = Round.getRound();
+		this.citizen = Helper.random(1, 20);
+		// Die Menge die die leute sammeln koennen
+		this.storage = (this.citizen*2)+5;
+		this.round  = Round.getRoundInstance();
 		this.round.registerObserver(this);
 		/*
 		 * Per Zufall entscheiden anhand der Werte von Ressourcen
 		 * ob ein Planet auch die Ressourcen hat
 		 */
 		if(Helper.random(0, 100)<bronze.dropRate) {
-			this.ressource.add(bronze);
+			this.resource.add(bronze);
 		}
 		if(Helper.random(0, 100)<silver.dropRate) {
-			this.ressource.add(silver);
+			this.resource.add(silver);
 		}
 		if(Helper.random(0, 100)<gold.dropRate) {
-			this.ressource.add(gold);
+			this.resource.add(gold);
 		}
 		if(Helper.random(0, 100)<jewel.dropRate) {
-			this.ressource.add(jewel);
+			this.resource.add(jewel);
 		}
 	}
 	
-//	public int income() {
-//		//sd
-//		return int;
-//	}
+	public int grow(int number) {
+		if(number%Round.getRound() == 0) {
+			return 1;
+		}
+		return 0;
+	}	
+	
+
+	public void income() {
+		 if(this.resource.contains(bronze)) {
+			 System.out.println("bronze");
+		 }
+		 if(this.resource.contains(silver)) {
+			 System.out.println("silver");
+		 }
+		 if(this.resource.contains(gold)) {
+			 System.out.println("gold");
+		 }
+		 if(this.resource.contains(jewel)) {
+			 System.out.println("juwel");
+		 }
+	}
 
 	@Override
 	public String getName() {
@@ -75,8 +99,8 @@ public class Planet implements Generetable, Observer{
 		return this.size;
 	}
 
-	public ArrayList<Ressource> getRessource() {
-		return this.ressource;
+	public ArrayList<Resource> getRessource() {
+		return this.resource;
 	}
 
 	@Override

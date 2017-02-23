@@ -1,24 +1,35 @@
 package de.nemewesa.character;
 
+import java.io.BufferedOutputStream;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectOutputStream;
+import java.util.ArrayList;
+
 import de.nemewesa.app.App;
+import de.nemewesa.app.Observer;
+import de.nemewesa.app.Round;
 import de.nemewesa.level.Generetable;
 import de.nemewesa.level.Planet;
 import de.nemewesa.level.Solarsystem;
 
-import java.util.ArrayList;
-
-public class Player {
+public class Player implements Observer{
 	
 	private String name;
-	private Planet currentPlanet = null;
-	private Planet homePlanet = null;
-	private Solarsystem homeSolarsystem = null;
-	private ArrayList<Generetable> ownership = new ArrayList<>();
+	private transient Planet currentPlanet = null;
+	private transient Planet homePlanet = null;
+	private transient Solarsystem homeSolarsystem = null;
+	private transient ArrayList<Generetable> ownership = new ArrayList<>();
+	private transient Round round;
 	
 	private final transient int ap = App.PLAYER_AP;
 	
 	public Player(String name){
 		this.name = name;
+		this.round = Round.getRoundInstance();
+		this.round.registerObserver(this);
 	}
 	
 	public String toString(){
@@ -68,5 +79,60 @@ public class Player {
 	public int getAp() {
 		return ap;
 	}
+
+	@Override
+	public void update(int round) {
+		System.out.println(this.name + " lautet die Runde " + round + " ein.");
+	}
+	
+	public void saveAsString(String filename) {
+		
+		File f = new File(filename);
+		String str = this.toString();
+		
+		try (BufferedOutputStream fos = new BufferedOutputStream(new FileOutputStream(f /*, true => wenn angehaengt werden soll */));) {
+			fos.write(str.getBytes());
+		}
+		catch(FileNotFoundException e){
+			System.out.println("FileNotFoundException: " + e.getMessage());
+		}
+		catch(IOException e) {
+			System.out.println("IOException: " + e.getMessage());
+		}		
+		
+	}
+	
+	public void save(String filename){
+
+		//Savable h = this;
+		Runnable thread = () -> {
+
+		//Thread thread = new Thread( new Runnable() {
+			
+			//public void run() {
+			
+				try (ObjectOutputStream out = 
+						new ObjectOutputStream(
+							new BufferedOutputStream(
+								new FileOutputStream(filename)));) {
+					
+					//out.writeObject(this);
+					out.writeObject(this);
+					out.close();
+				} 
+				catch (FileNotFoundException e) {
+					e.printStackTrace();
+				} 
+				catch (IOException e) {
+					e.printStackTrace();
+				}
+		
+		};
+		new Thread(thread).start();
+				
+		//}});
+		//thread.start();				
+	
+	}	
 
 }

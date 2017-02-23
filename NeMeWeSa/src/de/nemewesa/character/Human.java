@@ -10,9 +10,8 @@ public class Human {
 	public Planet parent;
 	
 	
-	public Human(String name, int amount) {
+	public Human(int amount) {
 		this.amount = amount;
-		this.name = name;
 	}
 	
 }
