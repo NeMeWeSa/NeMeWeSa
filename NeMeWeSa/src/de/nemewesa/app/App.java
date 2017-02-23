@@ -1,15 +1,7 @@
 package de.nemewesa.app;
 
-import java.util.ArrayList;
-import java.util.Scanner;
-
-import de.nemewesa.character.Enemy;
 import de.nemewesa.character.Player;
 import de.nemewesa.level.Level;
-import de.nemewesa.level.Moon;
-import de.nemewesa.level.Ressource;
-import de.nemewesa.level.SpaceStation;
-import de.nemewesa.spaceships.Fighter;
 
 
 public class App {
