@@ -1,7 +1,5 @@
 package de.nemewesa.app;
 
-import java.util.Scanner;
-
 import de.nemewesa.buildings.Storage;
 import de.nemewesa.character.Player;
 import de.nemewesa.level.Level;
@@ -32,9 +30,9 @@ public class App {
 	
 	public void createPlayer(){
 		
-		Scanner scanner = new Scanner(System.in);
-		System.out.println("[NeMeWeSa] Bitte geben Sie einen Spielernamen ein > ");
-		String playerName = scanner.nextLine();
+//		Scanner scanner = new Scanner(System.in);
+//		System.out.println("[NeMeWeSa] Bitte geben Sie einen Spielernamen ein > ");
+//		String playerName = scanner.nextLine();
 		player = new Player("tom");
 		player.setCurrentPlanet(level.getSector(0).getSolarsystem(0).getPlanet(0));
 		player.setHomePlanet(player.getCurrentPlanet());
@@ -44,9 +42,8 @@ public class App {
 	
 		System.out.println("[NeMeWeSa] Willkommen im NeMeWeSa " + player.getName());
 		System.out.println(player);
-//		this.round.setNewRound();
-//		this.round.setNewRound();
-//		player.getCurrentPlanet().income();
+
+
 	}
 	
 	public void createTransporter(Planet planet){
@@ -62,9 +59,15 @@ public class App {
 		
 		
 		//this.player.saveAsString("level\\" + Level.level + "\\saves\\playerString.dat");
-		//this.player.save("level\\" + Level.level + "\\saves\\playerObj.dat");
+		this.player.save("level\\" + Level.level + "\\saves\\playerObj.dat");
 		
+		try {
+			Thread.sleep(2000);
+		}catch( InterruptedException e) {}
 		
+		this.player.load("level\\" + Level.level + "\\saves\\playerObj.dat");
+		
+//		player.getCurrentPlanet().income();		
 
 //	   for(int i = 0; i < 10; i++){
 //		   

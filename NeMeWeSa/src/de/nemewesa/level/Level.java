@@ -2,9 +2,10 @@ package de.nemewesa.level;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Level{
+public class Level implements Serializable{
 
 	public static int level;
 

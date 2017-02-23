@@ -1,5 +1,6 @@
 package de.nemewesa.level;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 import de.nemewesa.app.Observer;
@@ -7,7 +8,7 @@ import de.nemewesa.app.Round;
 import de.nemewesa.helper.Helper;
 import de.nemewesa.modules.Defence;
 
-public class Planet implements Generetable, Observer{
+public class Planet implements Generetable, Observer, Serializable{
 	
 	public static Object resourceName;
 	public Moon moonName;

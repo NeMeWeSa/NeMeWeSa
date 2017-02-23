@@ -1,6 +1,8 @@
 package de.nemewesa.level;
 
-public class Resource {
+import java.io.Serializable;
+
+public class Resource implements Serializable{
 	
 	public String resourceName;
 	/*
