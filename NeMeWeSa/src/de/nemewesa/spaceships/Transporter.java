@@ -1,12 +1,20 @@
 package de.nemewesa.spaceships;
 
+import de.nemewesa.character.Enemy;
+import de.nemewesa.level.Planet;
+import de.nemewesa.level.SpaceStation;
+import de.nemewesa.level.Storage;
+
 public class Transporter extends Spaceship{
 	
 	
 	
+	private static Object resourceName;
+	public Storage capacity;
+
 	public Transporter(String shipName, String shipType, int shipHealth, int shipStrange, int shipFuel, Storage capacity) {
 		super(shipName,shipType, shipHealth, shipStrange, shipFuel);
-	//	this.capacity = capacity;
+		this.capacity = capacity;
 	}
 	
 	
@@ -31,9 +39,10 @@ public class Transporter extends Spaceship{
 	public int pickUp(Planet start)
 	{	
 		// Es geht nicht weil ich ein Inhalt von einer ArrayList von ner anderen abziehen will und die zwei werte haben
+		// 
 		if(Resource.lot < 1000 )
 		{
-			for(int weight: Planet.resourceStock)
+			for(int weight: Planet.ressource)
 			{
 				if(Planet.resourceName.equals(Transporter.resourceName))
 				{

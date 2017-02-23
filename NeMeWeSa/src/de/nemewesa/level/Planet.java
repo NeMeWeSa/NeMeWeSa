@@ -11,10 +11,15 @@ import de.nemewesa.modules.Defence;
 
 public class Planet implements Generetable, Observer{
 	
+	public static Object resourceName;
 	public Moon moonName;
 	// max 20 einwohner
 	public int citizen;
+<<<<<<< HEAD
+	public static ArrayList<Storage> ressource = new ArrayList<>();
+=======
 	public ArrayList<Resource> resource = new ArrayList<>();
+>>>>>>> branch 'master' of https://github.com/NeMeWeSa/NeMeWeSa.git
 	public SpaceStation stationName;
 	public Defence defenceName;
 	public boolean captured = false;

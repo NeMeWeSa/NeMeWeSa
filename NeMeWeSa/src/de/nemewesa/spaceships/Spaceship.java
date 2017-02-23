@@ -2,6 +2,11 @@ package de.nemewesa.spaceships;
 
 import java.util.ArrayList;
 
+import javax.annotation.Resource;
+
+import de.nemewesa.character.Enemy;
+import de.nemewesa.level.Moon;
+
 public class Spaceship {
 	
 	public String shipName;
