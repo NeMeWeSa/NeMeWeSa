@@ -28,7 +28,7 @@ public class App {
 		//level.printChildren();
 	}
 	
-	public void createPlayer(){
+	public void createPlayer(){ 
 		
 		//Scanner scanner = new Scanner(System.in);
 		//System.out.println("[NeMeWeSa] Bitte geben Sie einen Spielernamen ein > ");
