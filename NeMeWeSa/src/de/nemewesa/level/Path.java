@@ -100,7 +100,7 @@ public class Path {
 					tmp = path[i][j]; //Spieler speichern.
 					path[i][j] = ' '; //alte Position verlassen.
 					path[i+1][j] = tmp; //neu Position.
-					return;
+					return; 
 				}
 			}
 		}
