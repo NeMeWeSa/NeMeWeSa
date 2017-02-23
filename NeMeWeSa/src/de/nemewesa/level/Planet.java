@@ -13,7 +13,7 @@ public class Planet implements Generetable, Observer{
 	
 	public Moon moonName;
 	public int citizen;
-	public ArrayList<Ressource> ressource = new ArrayList<>();
+	public ArrayList<Storage> ressource = new ArrayList<>();
 	public SpaceStation stationName;
 	public Defence defenceName;
 	public boolean captured = false;
