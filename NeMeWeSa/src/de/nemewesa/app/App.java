@@ -1,7 +1,10 @@
 package de.nemewesa.app;
 
+import de.nemewesa.buildings.Storage;
 import de.nemewesa.character.Player;
 import de.nemewesa.level.Level;
+import de.nemewesa.level.Planet;
+import de.nemewesa.spaceships.Transporter;
 
 
 public class App {
@@ -42,6 +45,11 @@ public class App {
 //		this.round.setNewRound();
 //		this.round.setNewRound();
 //		player.getCurrentPlanet().income();
+	}
+	
+	public void createTransporter(Planet planet){
+		Transporter transporter01 = new Transporter("t1", "Transporter", 100, 100, 100, new Storage());
+		transporter01.currentPlanet = level.getSector(0).getSolarsystem(0).getPlanet(0);
 	}
 
 	public void runTests(){

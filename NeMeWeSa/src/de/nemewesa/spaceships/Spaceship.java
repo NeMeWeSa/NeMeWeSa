@@ -6,6 +6,7 @@ import javax.annotation.Resource;
 
 import de.nemewesa.character.Enemy;
 import de.nemewesa.level.Moon;
+import de.nemewesa.level.Planet;
 
 public class Spaceship {
 	
@@ -14,6 +15,8 @@ public class Spaceship {
 	public int shipHealth;
 	public int shipStrange;
 	public int shipFuel;
+	
+	public Planet currentPlanet = null;
 	
 	public static ArrayList<Resource> stock; 
 	

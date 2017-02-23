@@ -1,9 +1,7 @@
 package de.nemewesa.spaceships;
 
-<<<<<<< HEAD
 import de.nemewesa.character.Enemy;
-=======
->>>>>>> branch 'master' of https://github.com/NeMeWeSa/NeMeWeSa.git
+//github.com/NeMeWeSa/NeMeWeSa.git
 import de.nemewesa.level.Moon;
 
 public class Fighter extends Spaceship {

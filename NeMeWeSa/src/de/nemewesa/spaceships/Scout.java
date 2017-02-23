@@ -27,23 +27,23 @@ public class Scout extends Transporter{
 	}
 	
 	//Hier wird der Rohsrtoff vom gewählten PLANETEN AUFGENOMMEN
-	public int pickUp(Planet start)
-	{	
-		 return  start.resourceStock = start.resourceStock - capacity;
-	 
-	}
-	
-	// Die Frage ist ob man wirklich diese Methode braucht?
-	public void transport()
-	{
-		
-	}
-	
-	// Hier wird der Rohstoff in der jeweiligen Raumstation abgelegt
-	
-	
-	public int dropDown(SpaceStation goal)
-	{
-		return goal.warehouse = goal.warehouse + capacity;
-	}
+//	public int pickUp(Planet start)
+//	{	
+//		 return  start.resourceStock = start.resourceStock - capacity;
+//	 
+//	}
+//	
+//	// Die Frage ist ob man wirklich diese Methode braucht?
+//	public void transport()
+//	{
+//		
+//	}
+//	
+//	// Hier wird der Rohstoff in der jeweiligen Raumstation abgelegt
+//	
+//	
+//	public int dropDown(SpaceStation goal)
+//	{
+//		return goal.warehouse = goal.warehouse + capacity;
+//	}
 }

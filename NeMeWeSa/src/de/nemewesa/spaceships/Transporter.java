@@ -33,25 +33,25 @@ public class Transporter extends Spaceship{
 	}
 	
 	//Hier wird der Rohsrtoff vom gewählten PLANETEN AUFGENOMMEN
-	public int pickUp(Planet start)
-	{	
-		// Es geht nicht weil ich ein Inhalt von einer ArrayList von ner anderen abziehen will und die zwei werte haben
-		// 
-		if(Resource.lot < 1000 )
-		{
-			for(int weight: Planet.ressource) 
-			{
-				if(Planet.resourceName.equals(Transporter.resourceName))
-				{
-					
-				}
-			}
-			return  start.resourceStock = start.resourceStock - capacity;
-		}
-		
-		 
-	 
-	}
+//	public int pickUp(Planet start)
+//	{	
+//		// Es geht nicht weil ich ein Inhalt von einer ArrayList von ner anderen abziehen will und die zwei werte haben
+//		// 
+//		if(Resource.lot < 1000 )
+//		{
+//			for(int weight: Planet.ressource) 
+//			{
+//				if(Planet.resourceName.equals(Transporter.resourceName))
+//				{
+//					
+//				}
+//			}
+//			return  start.resourceStock = start.resourceStock - capacity;
+//		}
+//		
+//		 
+//	 
+//	}
 	
 	// Die Frage ist ob man wirklich diese Methode braucht?
 	public void transport()
@@ -60,9 +60,9 @@ public class Transporter extends Spaceship{
 	}
 	
 	// Hier wird der Rohstoff in der jeweiligen Raumstation abgelegt
-	public int dropDown(SpaceStation goal)
-	{
-		return goal.warehouse = goal.warehouse + capacity;
-	}
+//	public int dropDown(SpaceStation goal)
+//	{
+//		return goal.warehouse = goal.warehouse + capacity;
+//	}
 
 }
