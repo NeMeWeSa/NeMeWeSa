@@ -1,22 +1,19 @@
 package de.nemewesa.spaceships;
 
+import de.nemewesa.building.Storage;
 import de.nemewesa.character.Enemy;
 import de.nemewesa.level.Planet;
 import de.nemewesa.level.SpaceStation;
-import de.nemewesa.level.Storage;
 
 public class Transporter extends Spaceship{
 	
-	
-	
-	private static Object resourceName;
-	public Storage capacity;
+	//private static Object resourceName;
+	public Storage storage;
 
-	public Transporter(String shipName, String shipType, int shipHealth, int shipStrange, int shipFuel, Storage capacity) {
+	public Transporter(String shipName, String shipType, int shipHealth, int shipStrange, int shipFuel, Storage storage) {
 		super(shipName,shipType, shipHealth, shipStrange, shipFuel);
-		this.capacity = capacity;
+		this.storage = storage;
 	}
-	
 	
 	
 //	public Transporter(int capacity){
@@ -42,7 +39,7 @@ public class Transporter extends Spaceship{
 		// 
 		if(Resource.lot < 1000 )
 		{
-			for(int weight: Planet.ressource)
+			for(int weight: Planet.ressource) 
 			{
 				if(Planet.resourceName.equals(Transporter.resourceName))
 				{

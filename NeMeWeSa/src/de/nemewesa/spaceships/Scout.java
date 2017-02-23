@@ -3,10 +3,10 @@ package de.nemewesa.spaceships;
 import java.util.ArrayList;
 import java.util.List;
 
+import de.nemewesa.building.Storage;
 import de.nemewesa.character.Enemy;
 import de.nemewesa.level.Planet;
 import de.nemewesa.level.SpaceStation;
-import de.nemewesa.level.Storage;
 
 public class Scout extends Transporter{
 	
