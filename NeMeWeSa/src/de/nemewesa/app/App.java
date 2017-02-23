@@ -1,5 +1,7 @@
 package de.nemewesa.app;
 
+import java.util.Scanner;
+
 import de.nemewesa.buildings.Storage;
 import de.nemewesa.character.Player;
 import de.nemewesa.level.Level;
@@ -30,9 +32,9 @@ public class App {
 	
 	public void createPlayer(){
 		
-		//Scanner scanner = new Scanner(System.in);
-		//System.out.println("[NeMeWeSa] Bitte geben Sie einen Spielernamen ein > ");
-		//String playerName = scanner.nextLine();
+		Scanner scanner = new Scanner(System.in);
+		System.out.println("[NeMeWeSa] Bitte geben Sie einen Spielernamen ein > ");
+		String playerName = scanner.nextLine();
 		player = new Player("tom");
 		player.setCurrentPlanet(level.getSector(0).getSolarsystem(0).getPlanet(0));
 		player.setHomePlanet(player.getCurrentPlanet());
