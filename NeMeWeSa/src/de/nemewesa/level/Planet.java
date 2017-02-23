@@ -58,7 +58,7 @@ public class Planet implements Generetable{
 	}
 
 	public ArrayList<Ressource> getRessource() {
-		return ressource;
+		return this.ressource;
 	}
 
 	@Override
