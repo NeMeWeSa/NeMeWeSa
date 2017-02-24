@@ -42,29 +42,9 @@ public class App {
 	
 		System.out.println("[NeMeWeSa] Willkommen im NeMeWeSa " + player.getName());
 		System.out.println(player);
-		
-		 
-		this.round.setNewRound();		
-		System.out.println(" Amount index 0  = " + player.getCurrentPlanet().resource.get(0).amount);
-		System.out.println(player.getCurrentPlanet().resource.get(0).getGrow());
-		System.out.println(round.getRound());
-		
-		player.getCurrentPlanet().mine(player.getCurrentPlanet().resource.get(0));
-		System.out.println(" ress = " + player.getCurrentPlanet().resource.get(0).amount);
-		player.getCurrentPlanet().mine(player.getCurrentPlanet().resource.get(0));
+			
 
-		player.getCurrentPlanet().generateResource(player.getCurrentPlanet().resource.get(0));
-		System.out.println(" ress = " + player.getCurrentPlanet().resource.get(0).amount);
-		this.round.setNewRound();
-		player.getCurrentPlanet().generateResource(player.getCurrentPlanet().resource.get(0));
-		System.out.println(" ress = " + player.getCurrentPlanet().resource.get(0).amount);
-		this.round.setNewRound();
-
-		
-//		player.getCurrentPlanet().mine();		
-//		this.round.setNewRound();
-//		this.round.setNewRound();
-//		player.getCurrentPlanet().income();
+	
 	}
 	
 	public void createTransporter(Planet planet){
@@ -78,6 +58,19 @@ public class App {
 		//this.round.setNewRound();
 		//this.round.setNewRound();
 		
+		/*
+		 * Planet Ressourcen Test
+		 * Hier kann, wenn der Planet eingenommen wurde (Methode mine "captured == true"), nach Ressourcen gefarmt werden.
+		 * mit mine() wird abgefarmt 
+		 * mit generateResource() wieder Ressourcen erstellt (wenn denn der die Runde mit den Nachwuchsfaktor "ressource.grow"
+		 * uebereinstimmt)
+		 */
+//		this.round.setNewRound();		
+//		System.out.println(" ANFANG Wert im index 0 = " + player.getCurrentPlanet().resource.get(0).amount);
+//		System.out.println(" Nach Wieviel Runden soll regeneriert werden "+ player.getCurrentPlanet().resource.get(0).getGrow());
+//		System.out.println("Welche Runde ist aktuell: " +round.getRound());		
+//		player.getCurrentPlanet().mine(player.getCurrentPlanet().resource.get(0));
+//		player.getCurrentPlanet().generateResource(player.getCurrentPlanet().resource.get(0));
 		
 		//this.player.saveAsString("level\\" + Level.level + "\\saves\\playerString.dat");
 		//this.player.save("level\\" + Level.level + "\\saves\\playerObj.dat");

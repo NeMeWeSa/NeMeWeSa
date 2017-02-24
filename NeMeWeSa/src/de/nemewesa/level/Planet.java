@@ -66,26 +66,22 @@ public class Planet implements Generetable, Observer{
 	
 
 	public void generateResource(Resource res) {
-		if(this.resource.contains(res)) {
-			if(res.getGrow() % round.getRound() == 0) {
-				res.amount +=1;
-			}		
+		if(this.resource.contains(res) && round.getRound() % res.getGrow() == 0) {
+				res.amount +=1;					
 		}		
 	}		
 
 	// player.getCurrentPlanet().mine(player.getCurrentPlanet().resource.get(0));
 	// zum farmen (0) wäre nun bronze WENN bronze vorhanden
 	public void mine(Resource res) {
-		if(captured = true) {
-			if(this.resource.contains(res)) {
+		if(captured == true && this.resource.contains(res)) {
 				res.amount -= 1;
-			}
 		}
 	}
 	
 
 	public void income() {
-		if(captured = true) {
+//		if(captured = true) {
 		 if(this.resource.contains(bronze)) {
 			 System.out.println("bronze");
 		 }
@@ -98,7 +94,7 @@ public class Planet implements Generetable, Observer{
 		 if(this.resource.contains(jewel)) {
 			 System.out.println("juwel");
 		 }
-		}
+//		}
 	}
 
 	@Override
