@@ -1,8 +1,8 @@
 package de.nemewesa.level;
 
-import java.io.Serializable;
+import de.nemewesa.helper.Helper;
 
-public class Resource implements Serializable{
+public class Ressource {
 	
 	public String resourceName;
 	/*
@@ -21,7 +21,13 @@ public class Resource implements Serializable{
 	
 	
 	
-	public Resource(String resourceName, int value, int amount, int mine, int space, int grow, int dropChance)
+	public int getGrow() {
+		return grow;
+	}
+
+
+
+	public Ressource(String resourceName, int value, int amount, int mine, int space, int grow, int dropChance)
 	{ 
 		this.resourceName = resourceName;
 		this.value = value;
@@ -34,12 +40,6 @@ public class Resource implements Serializable{
 		// .....
 		this.grow = grow;
 		this.dropRate = dropChance;
-	}
-
-
-
-	public int getGrow() {
-		return grow;
 	}  
 	
 

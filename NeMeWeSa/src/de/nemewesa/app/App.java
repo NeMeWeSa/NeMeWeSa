@@ -14,14 +14,14 @@ public class App {
 	private Player player;
 	private Level level;
 	private Round round = Round.getRoundInstance();
-    private DB db = DB.getInstance();
-    private Console console = new Console();
+	private DB db;
+	private Console console;
 
 	public static void main(String[] args) throws Exception {
+
 		App app = new App();
 		app.createNewLevel(1);
 		app.createPlayer();
-		//app.createUsersTable();
 		app.runTests();
 	}
 
@@ -45,6 +45,21 @@ public class App {
 	
 		System.out.println("[NeMeWeSa] Willkommen im NeMeWeSa " + player.getName());
 		System.out.println(player);
+		
+		System.out.println(player.getCurrentPlanet().resource.get(0).amount);
+		player.getCurrentPlanet().mine(player.getCurrentPlanet().resource.get(0));
+		System.out.println(player.getCurrentPlanet().resource.get(0).amount);
+		player.getCurrentPlanet().mine(player.getCurrentPlanet().resource.get(0));
+		System.out.println(player.getCurrentPlanet().resource.get(0).amount);
+		player.getCurrentPlanet().mine(player.getCurrentPlanet().resource.get(0));
+		System.out.println(player.getCurrentPlanet().resource.get(0).amount);
+		player.getCurrentPlanet().mine(player.getCurrentPlanet().resource.get(0));
+		
+		
+		
+		
+//		player.getCurrentPlanet().mine();
+		
 
 
 	}

@@ -14,7 +14,6 @@ public class Planet implements Generetable, Observer, Serializable{
 	public Moon moonName;
 	// max 20 einwohner
 	public int citizen;
-
 	public ArrayList<Resource> resource = new ArrayList<>();
 
 	public SpaceStation stationName;
@@ -32,9 +31,9 @@ public class Planet implements Generetable, Observer, Serializable{
 	 * laesst sich ueber den space festlegen wieviel man tragen kann
 	 * Name, value, amount, int mine, space, grow(in steps), dropChance 
 	 */
-	Resource bronze = new Resource("Bronze", 1, Helper.random(1, 50), 2, 2, 8, 85);
-	Resource silver = new Resource("Silber", 2, Helper.random(1, 40), 2,  2, 10, 50);
-	Resource gold = new Resource("Gold", 3, Helper.random(1, 30), 2, 2, 12, 30);
+	Resource bronze = new Resource("Bronze", 1, Helper.random(10, 50), 2, 2, 8, 85);
+	Resource silver = new Resource("Silber", 2, Helper.random(5, 40), 2,  2, 10, 50);
+	Resource gold = new Resource("Gold", 3, Helper.random(3, 30), 2, 2, 12, 30);
 	Resource jewel= new Resource("Juwel", 5, Helper.random(1, 10), 3, 1, 14, 10);
 	
 	
@@ -42,14 +41,14 @@ public class Planet implements Generetable, Observer, Serializable{
 		this.name = generateName();
 		this.parent = parent;
 		this.size = Helper.random(100, 1000);
-		this.citizen = Helper.random(1, 20);
+		this.citizen = Helper.random(5, 15);
 		// Die Menge die die leute sammeln koennen
 		this.storage = (this.citizen*2)+5;
 		this.round  = Round.getRoundInstance();
 		this.round.registerObserver(this);
 		/*
-		 * Per Zufall entscheiden anhand der Werte von Ressourcen
-		 * ob ein Planet auch die Ressourcen hat
+		 * Per Zufall entscheiden anhand der Werte von Resourcen
+		 * ob ein Planet auch die Resourcen hat
 		 */
 		if(Helper.random(0, 100)<bronze.dropRate) {
 			this.resource.add(bronze);
@@ -65,11 +64,27 @@ public class Planet implements Generetable, Observer, Serializable{
 		}
 	}
 	
-	
-	public void mine(Resource res) {}
+
+	public void generateResource(Resource res) {
+		if(this.resource.contains(res)) {
+			if(res.getGrow() % round.getRound() == 0) {
+				res.amount +=1;
+			}			
+		}			
+	}		
+
+
+	public void mine(Resource res) {
+		if(captured = true) {
+			if(this.resource.contains(res)) {
+				res.amount -= 1;
+			}
+		}
+	}
 	
 
 	public void income() {
+		if(captured = true) {
 		 if(this.resource.contains(bronze)) {
 			 System.out.println("bronze");
 		 }
@@ -82,6 +97,7 @@ public class Planet implements Generetable, Observer, Serializable{
 		 if(this.resource.contains(jewel)) {
 			 System.out.println("juwel");
 		 }
+		}
 	}
 
 	@Override
@@ -92,7 +108,7 @@ public class Planet implements Generetable, Observer, Serializable{
 		return this.size;
 	}
 
-	public ArrayList<Resource> getRessource() {
+	public ArrayList<Resource> getResource() {
 		return this.resource;
 	}
 
@@ -119,9 +135,6 @@ public class Planet implements Generetable, Observer, Serializable{
 		return name4+firstname[Helper.random(0, firstname.length)].toLowerCase();
 	}
 	
-	public void generateRessource() {
-		
-	}
 	
 	public static void defending()
 	{
