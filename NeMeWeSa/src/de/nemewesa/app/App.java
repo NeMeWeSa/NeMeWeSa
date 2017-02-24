@@ -1,7 +1,7 @@
 package de.nemewesa.app;
 
-import de.nemewesa.buildings.Storage;
 import de.nemewesa.character.Player;
+import de.nemewesa.db.DB;
 import de.nemewesa.level.Level;
 import de.nemewesa.level.Planet;
 import de.nemewesa.level.Resource;
@@ -11,9 +11,14 @@ import de.nemewesa.spaceships.Transporter;
 public class App {
 	
 	public static final int PLAYER_AP = 20;
+	// Legt fest, ob Statusausgeben angezeigt werden sollen.
+	public static final boolean DEV_MODE = false;
+	
 	private Player player;
 	private Level level;
-	private Round round = Round.getRoundInstance();
+	private Round round = Round.getRoundInstance();  
+	private DB db;
+	private Console console;
 
 	public static void main(String[] args) throws Exception {
 
@@ -31,9 +36,9 @@ public class App {
 	
 	public void createPlayer(){ 
 		
-		//Scanner scanner = new Scanner(System.in);
-		//System.out.println("[NeMeWeSa] Bitte geben Sie einen Spielernamen ein > ");
-		//String playerName = scanner.nextLine();
+//		Scanner scanner = new Scanner(System.in);
+//		System.out.println("[NeMeWeSa] Bitte geben Sie einen Spielernamen ein > ");
+//		String playerName = scanner.nextLine();
 		player = new Player("tom");
 		player.setCurrentPlanet(level.getSector(0).getSolarsystem(0).getPlanet(0));
 		player.setHomePlanet(player.getCurrentPlanet());
@@ -48,12 +53,24 @@ public class App {
 	
 	}
 	
-	public void createTransporter(Planet planet){
-		Transporter transporter01 = new Transporter("t1", "Transporter", 100, 100, 100, new Storage());
-		transporter01.currentPlanet = level.getSector(0).getSolarsystem(0).getPlanet(0);
+	public void loginUser(){
+		
+		while( db.loginUser(console) ){
+			
+		}
+		
+		System.out.println("Sie sind nun angemeldet");		
 	}
-
+	
+	
+	
 	public void runTests(){
+		
+		loginUser();
+		
+        //db.initDBConnection();	
+        //db.showAllUsers();
+
 		
 		
 
@@ -90,9 +107,15 @@ public class App {
 //		player.getCurrentPlanet().generateResource(player.getCurrentPlanet().resource.get(0));
 		
 		//this.player.saveAsString("level\\" + Level.level + "\\saves\\playerString.dat");
-		//this.player.save("level\\" + Level.level + "\\saves\\playerObj.dat");
+//		this.player.save("level\\" + Level.level + "\\saves\\playerObj.dat");
+//		
+//		try {
+//			Thread.sleep(2000);
+//		}catch( InterruptedException e) {}
+//		
+//		this.player.load("level\\" + Level.level + "\\saves\\playerObj.dat");
 		
-		
+//		player.getCurrentPlanet().income();		
 
 //	   for(int i = 0; i < 10; i++){
 //		   

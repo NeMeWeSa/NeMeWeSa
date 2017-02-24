@@ -1,8 +1,9 @@
 package de.nemewesa.app;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Round implements Subject{
+public class Round implements Subject, Serializable{
 	
 	private static final Round roundInstance = new Round();
 	private ArrayList<Observer> observers;

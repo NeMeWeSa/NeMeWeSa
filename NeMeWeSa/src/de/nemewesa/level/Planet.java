@@ -1,5 +1,6 @@
 package de.nemewesa.level;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 import javax.annotation.Resources;
@@ -9,7 +10,7 @@ import de.nemewesa.app.Round;
 import de.nemewesa.helper.Helper;
 import de.nemewesa.modules.Defence;
 
-public class Planet implements Generetable, Observer{
+public class Planet implements Generetable, Observer, Serializable{
 	
 	public static Object resourceName;
 	public Moon moonName;
@@ -19,8 +20,13 @@ public class Planet implements Generetable, Observer{
 	public boolean captured = false;
 	public String name;
 	public Round round;
+<<<<<<< HEAD
 	public int storage = 0;
 	// size des planeten zwischen 
+=======
+	public int storage;
+	// size des planeten zwischen
+>>>>>>> branch 'master' of https://github.com/NeMeWeSa/NeMeWeSa.git
 	public int size;
 	public Solarsystem parent;
 	public String[] firstname = {"Ben", "Pe", "To", "Jau", "Ja", "Ter", "Masz", "Res", "Min", "Ro", "Sen", "Ta", "Bue", "Ur", "Ban", "Iak", "Dzi", "Ko", "Wi", "Cki"};

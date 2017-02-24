@@ -1,11 +1,15 @@
 package de.nemewesa.character;
 
+import java.io.BufferedInputStream;
 import java.io.BufferedOutputStream;
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import java.io.Serializable;
 import java.util.ArrayList;
 
 import de.nemewesa.app.App;
@@ -15,14 +19,14 @@ import de.nemewesa.level.Generetable;
 import de.nemewesa.level.Planet;
 import de.nemewesa.level.Solarsystem;
 
-public class Player implements Observer{
+public class Player implements Observer, Serializable{
 	
 	private String name;
-	private transient Planet currentPlanet = null;
-	private transient Planet homePlanet = null;
-	private transient Solarsystem homeSolarsystem = null;
-	private transient ArrayList<Generetable> ownership = new ArrayList<>();
-	private transient Round round;
+	private Planet currentPlanet = null;
+	private Planet homePlanet = null;
+	private Solarsystem homeSolarsystem = null;
+	private ArrayList<Generetable> ownership = new ArrayList<>();
+	private Round round;
 	
 	private final transient int ap = App.PLAYER_AP;
 	
@@ -133,6 +137,45 @@ public class Player implements Observer{
 		//}});
 		//thread.start();				
 	
-	}	
+	}
+	
+	public void load(String filename){
+		
+		
+		//Runnable thread = () -> {		
+		Thread thread = new Thread( new Runnable() {
+			
+			public void run() {
+		
+			try (ObjectInputStream in = 
+					new ObjectInputStream(
+						new BufferedInputStream(
+							new FileInputStream(filename)));) {
+				
+				//Object object = null;
+			
+				Object object = in.readObject();
+					
+				if(object != null) {
+					Player importedObj = (Player) object;
+					System.out.println("Der importierte Player: " + importedObj);
+				}
+				in.close();
+				
+			} 
+			catch (IOException e) {
+				e.printStackTrace();
+			} 
+			catch (ClassNotFoundException e) {
+				e.printStackTrace();
+			}
+		
+		//};
+		//new Thread(thread).start();
+			
+		}});
+		thread.start();			
+			
+	}
 
 }
