@@ -25,6 +25,7 @@ public class Planet implements Generetable, Observer, Serializable{
 	public int size;
 	public Solarsystem parent;
 	public String[] firstname = {"Ben", "Pe", "To", "Jau", "Ja", "Ter", "Masz", "Res", "Min", "Ro", "Sen", "Ta", "Bue", "Ur", "Ban", "Iak", "Dzi", "Ko", "Wi", "Cki"};
+	ArrayList<String> woerter = new ArrayList<String>();
 /* 
  * wenn das raumschiff zb. 10 plaetze frei hat
  * laesst sich ueber den space festlegen wieviel man tragen kann
@@ -208,14 +209,36 @@ public class Planet implements Generetable, Observer, Serializable{
 	public String generateName() {
 		String name1 = firstname[Helper.random(0, firstname.length)];
 		String name2 = firstname[Helper.random(0, firstname.length)];
-				if(name1.equals(name2)) {
+			if(name1.equals(name2)) {
 			name1 = firstname[Helper.random(0, firstname.length)];
 		}
-		String name4 = name1 + name2.toLowerCase();
-		if(name4.length()<7) {
-			return name4;
-		}
-		return name4+firstname[Helper.random(0, firstname.length)].toLowerCase();
+		woerter.add(name1+name2);
+		if(woerter.contains(o))
+			
+/*
+ * 
+ * 
+ * 
+ * 
+ * 
+ */
+			
+			
+			
+//		for(int i=0; i<woerter.length; i++) {
+//			woerter[i] = name3;
+//		}
+	
+//		for (int i=0; i<woerter.length; i++) {
+//			for (int j=i+1; j<woerter.length; j++)  {
+//				if (i!=j && woerter[i] == woerter[j]) {
+//					System.out.println("ja");
+//				}				
+//			}		  
+//		}
+		return "nein";
+
+	
 	}
 	
 	
