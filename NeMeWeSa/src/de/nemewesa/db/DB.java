@@ -98,9 +98,8 @@ public class DB {
         }
     }
     
-    public boolean loginUser(Console console) {
+    public Login loginUser(Console console) {
         
-    	Boolean denyLogin = true;
     	Login login = console.login();
     	
     	try {
@@ -112,16 +111,16 @@ public class DB {
 
             if(rs.next()){          	
             	if(rs.getString("password").equals(login.pass)){
-            		denyLogin = false;
+            		return login;
             	}
             	else{
                 	System.out.println("[Login] Falsches Passwort");
-                	denyLogin = true;
+                	login = null;
             	}
             }
             else{
             	System.out.println("[Login] Falscher Benutzername");
-            	denyLogin = true;
+            	login = null;
             }      
             rs.close();
             
@@ -130,7 +129,7 @@ public class DB {
             System.out.println("Fehler in der Datenbank-Abfrage:\n" + e.getMessage());
         }
         
-    	return denyLogin;
+    	return login;
     	
     }
     
