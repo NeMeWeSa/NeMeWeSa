@@ -3,9 +3,6 @@ package de.nemewesa.app;
 import de.nemewesa.character.Player;
 import de.nemewesa.db.DB;
 import de.nemewesa.level.Level;
-import de.nemewesa.level.Planet;
-import de.nemewesa.level.Resource;
-import de.nemewesa.spaceships.Transporter;
 
 
 public class App {
@@ -17,8 +14,9 @@ public class App {
 	private Player player;
 	private Level level;
 	private Round round = Round.getRoundInstance();  
-	private DB db;
-	private Console console;
+	private DB db = DB.getInstance();
+	private Console console = new Console();
+	private Login login;
 
 	public static void main(String[] args) throws Exception {
 
@@ -31,7 +29,7 @@ public class App {
 	public void createNewLevel(int lev){
 		level = new Level(lev);
 		level.generate();
-		//level.printChildren();
+		level.printChildren();
 	}
 	
 	public void createPlayer(){ 
@@ -53,18 +51,35 @@ public class App {
 	
 	public void loginUser(){
 		
-		while( db.loginUser(console) ){
+		if(login == null){
+			while( true ){
+				login = db.loginUser(console);
+				if(login != null)
+					break;
+			}
 			
+			System.out.println("Willkommen " + login.name + ". Du bist nun angemeldet");
 		}
-		
-		System.out.println("Du bist nun angemeldet");	
+		else{
+			System.out.println("Du bist bereits angemeldet " + login.name);
+		}
 	}
-	
 	
 	
 	public void runTests(){
 		
 		loginUser();
+		loginUser();
+		loginUser();
+		loginUser();
+		loginUser();
+		loginUser();
+			
+        //db.showAllUsers();
+		loginUser();
+//		
+//        db.initDBConnection();	
+//        db.showAllUsers();
 		
         db.initDBConnection();	
         db.showAllUsers();
