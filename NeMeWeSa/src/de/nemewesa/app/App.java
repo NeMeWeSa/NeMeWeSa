@@ -70,6 +70,13 @@ public class App {
 
 
 
+		
+		loginUser();
+		loginUser();
+		loginUser();
+		loginUser();
+		loginUser();
+		loginUser();
 			
         //db.showAllUsers();
 //		loginUser();
