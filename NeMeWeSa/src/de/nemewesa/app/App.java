@@ -47,6 +47,7 @@ public class App {
 //		player.getCurrentPlanet().income();
 	}
 	
+	
 	public void createTransporter(Planet planet){
 		Transporter transporter01 = new Transporter("t1", "Transporter", 100, 100, 100, new Storage());
 		transporter01.currentPlanet = level.getSector(0).getSolarsystem(0).getPlanet(0);

@@ -16,11 +16,6 @@ public class Transporter extends Spaceship{
 	}
 	
 	
-//	public Transporter(int capacity){
-//		super("Donkey","Transporter",60,10,500);
-//		this.capacity = capacity;
-//	}
-	
 	public void die()
 	{
 		System.out.println(this.shipName + " ist zerstört!!!");
