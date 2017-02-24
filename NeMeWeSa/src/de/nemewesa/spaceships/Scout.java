@@ -10,9 +10,9 @@ import de.nemewesa.level.SpaceStation;
 
 public class Scout extends Transporter{
 	
-	public Scout(String shipName, String shipType, int shipHealth, int shipStrange, int shipFuel, Storage capacity)
+	public Scout(String shipName, String shipType, int shipHealth, int shipStrange, int shipFuel, Storage capacity, Planet currentPlanet)
 	{
-		super(shipName,shipType, shipHealth, shipStrange, shipFuel, capacity);
+		super(shipName,shipType, shipHealth, shipStrange, shipFuel, capacity, currentPlanet);
 	}
 
 	public void die()

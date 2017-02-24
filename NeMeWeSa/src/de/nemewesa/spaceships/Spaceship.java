@@ -16,23 +16,23 @@ public class Spaceship {
 	public int shipStrange;
 	public int shipFuel;
 	
-	public Planet currentPlanet = null;
+	//public Planet currentPlanet = null;
 	
 	public static ArrayList<Resource> stock; 
-	public Planet currentPl;
+	public Planet currentPlanet;
 	
-	public Spaceship(String shipName, String shipType, int shipHealth, int shipStrange, int shipFuel, Planet currentPl) {
+	public Spaceship(String shipName, String shipType, int shipHealth, int shipStrange, int shipFuel,Planet currentPlanet) {
 		this.shipName = shipName;
 		this.shipType = shipType;
 		this.shipHealth = shipHealth;
 		this.shipStrange = shipStrange;
 		this.shipFuel = shipFuel;
-		this.currentPl = currentPl;
+		this.currentPlanet = currentPlanet;
 	}
 
-	public static void fly()
+	public void fly(Planet planet)
 	{
-		
+		this.currentPlanet = planet;
 	}
 	
 	public int shipAttack(Enemy target)

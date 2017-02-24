@@ -10,8 +10,8 @@ public class Transporter extends Spaceship{
 	//private static Object resourceName;
 	public Storage storage;
 
-	public Transporter(String shipName, String shipType, int shipHealth, int shipStrange, int shipFuel, Storage storage) {
-		super(shipName,shipType, shipHealth, shipStrange, shipFuel);
+	public Transporter(String shipName, String shipType, int shipHealth, int shipStrange, int shipFuel, Storage storage, Planet currentPlanet) {
+		super(shipName, shipType, shipHealth, shipStrange, shipFuel, currentPlanet);
 		this.storage = storage;
 	}
 	

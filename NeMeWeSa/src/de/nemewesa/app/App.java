@@ -3,7 +3,6 @@ package de.nemewesa.app;
 import de.nemewesa.buildings.Storage;
 import de.nemewesa.character.Player;
 import de.nemewesa.level.Level;
-import de.nemewesa.level.Planet;
 import de.nemewesa.spaceships.Transporter;
 
 
@@ -48,14 +47,18 @@ public class App {
 	}
 	
 	
-	public void createTransporter(Planet planet){
-		Transporter transporter01 = new Transporter("t1", "Transporter", 100, 100, 100, new Storage());
-		transporter01.currentPlanet = level.getSector(0).getSolarsystem(0).getPlanet(0);
+	public void createTransporter(){
+
 	}
 
 	public void runTests(){
 		
-		
+		Transporter t1 = new Transporter("t1", "Transporter", 100, 100, 100, new Storage(),player.getHomePlanet()
+				);
+		t1.currentPlanet = level.getSector(0).getSolarsystem(0).getPlanet(0);
+		System.out.println("Vorheriger Planet: " + t1.currentPlanet.getName());
+		t1.fly(level.getSector(0).getSolarsystem(0).getPlanet(2));
+		System.out.println("neuer Planet: "+ t1.currentPlanet.getName());		
 		//this.round.setNewRound();
 		//this.round.setNewRound();
 		
