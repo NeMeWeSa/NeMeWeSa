@@ -64,7 +64,7 @@ public class App {
 	
 	public void runTests(){
 		
-		loginUser();
+//		loginUser();
 		
         //db.initDBConnection();	
         //db.showAllUsers();
@@ -78,20 +78,20 @@ public class App {
 		 */
 //		this.round.setNewRound();		
 //			
-//		for (int i = 0; i < 11; i++) {
-////			player.getCurrentPlanet().income();
-//			
-//			
-//			System.out.println(i + " Einwohner: " + player.getCurrentPlanet().citizen);
-//			System.out.println(i + " amount " + player.getCurrentPlanet().bronze.amount);
-//			System.out.println(i + " farm " + player.getCurrentPlanet().bronze.farm);
-//			System.out.println(i + " bronze storage f = " + player.getCurrentPlanet().bronze.storagef);		
-//			player.getCurrentPlanet().mineBronze();
+		for (int i = 0; i < 11; i++) {
 //			player.getCurrentPlanet().income();
-//			System.out.println(i + " income " + player.getCurrentPlanet().bronze.farm);
-//			System.out.println(i + " bronze storage f = " + player.getCurrentPlanet().bronze.storagef);
-//			System.out.println("----------------------------------------------------------------");
-//		}
+			
+			
+			System.out.println(i + " Einwohner: " + player.getCurrentPlanet().citizen);
+			System.out.println(i + " amount " + player.getCurrentPlanet().bronze.amount);
+			System.out.println(i + " farm " + player.getCurrentPlanet().bronze.farm);
+			System.out.println(i + " bronze storage f = " + player.getCurrentPlanet().bronze.storagef);		
+			player.getCurrentPlanet().mineBronze();
+			player.getCurrentPlanet().income();
+			System.out.println(i + " income " + player.getCurrentPlanet().bronze.farm);
+			System.out.println(i + " bronze storage f = " + player.getCurrentPlanet().bronze.storagef);
+			System.out.println("----------------------------------------------------------------");
+		}
 
 
 
