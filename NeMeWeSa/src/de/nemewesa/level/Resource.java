@@ -15,16 +15,18 @@ public class Resource {
 	public int grow;	
 	public int amount;	
 	public int dropRate;
-	public int mine;
+	public int farm;
+	public int storage;
+	public int storagef;
 	
 	
 	
-	public Resource(String resourceName, int value, int amount, int mine, int space, int grow, int dropChance)
+	public Resource(String resourceName, int value, int amount, int farm, int space, int grow, int dropChance, int storage, int storagef)
 	{ 
 		this.resourceName = resourceName;
 		this.value = value;
 		this.space = space;
-		this.mine = mine;
+		this.farm = farm;
 		this.amount = amount;
 		// grow wird bestimmt durch den modolu spaeter
 		// grow%4 = 0 kupfer waechst alle 4 Runden nach
@@ -32,6 +34,8 @@ public class Resource {
 		// .....
 		this.grow = grow;
 		this.dropRate = dropChance;
+		this.storage = storage;
+		this.storagef = storagef;
 	}
 
 

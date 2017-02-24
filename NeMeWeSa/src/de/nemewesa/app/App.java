@@ -4,6 +4,7 @@ import de.nemewesa.buildings.Storage;
 import de.nemewesa.character.Player;
 import de.nemewesa.level.Level;
 import de.nemewesa.level.Planet;
+import de.nemewesa.level.Resource;
 import de.nemewesa.spaceships.Transporter;
 
 
@@ -65,7 +66,24 @@ public class App {
 		 * uebereinstimmt)
 		 */
 //		this.round.setNewRound();		
-//		System.out.println(" ANFANG Wert im index 0 = " + player.getCurrentPlanet().resource.get(0).amount);
+//			
+//		for (int i = 0; i < 11; i++) {
+////			player.getCurrentPlanet().income();
+//			
+//			
+//			System.out.println(i + " Einwohner: " + player.getCurrentPlanet().citizen);
+//			System.out.println(i + " amount " + player.getCurrentPlanet().bronze.amount);
+//			System.out.println(i + " farm " + player.getCurrentPlanet().bronze.farm);
+//			System.out.println(i + " bronze storage f = " + player.getCurrentPlanet().bronze.storagef);		
+//			player.getCurrentPlanet().mineBronze();
+//			player.getCurrentPlanet().income();
+//			System.out.println(i + " income " + player.getCurrentPlanet().bronze.farm);
+//			System.out.println(i + " bronze storage f = " + player.getCurrentPlanet().bronze.storagef);
+//			System.out.println("----------------------------------------------------------------");
+//		}
+
+
+
 //		System.out.println(" Nach Wieviel Runden soll regeneriert werden "+ player.getCurrentPlanet().resource.get(0).getGrow());
 //		System.out.println("Welche Runde ist aktuell: " +round.getRound());		
 //		player.getCurrentPlanet().mine(player.getCurrentPlanet().resource.get(0));
