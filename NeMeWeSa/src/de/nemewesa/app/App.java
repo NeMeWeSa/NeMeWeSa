@@ -13,7 +13,7 @@ public class App {
 	
 	private Player player;
 	private Level level;
-	private Round round = Round.getRoundInstance();  
+	private Round round = Round.getRoundInstance();
 	private DB db = DB.getInstance();
 	private Console console = new Console();
 	private Login login;
@@ -25,9 +25,12 @@ public class App {
 	}
 	
 	public void init(){
-		loginUser();
+		if(DEV_MODE)
+			db.createUsersTable();
+		
+		//loginUser();
 		createNewLevel(1);
-		createPlayer(login.name);
+		createPlayer("Master");
 		runTests();
 	}
 
@@ -70,8 +73,7 @@ public class App {
 	
 	public void runTests(){
 		
-		
-		//db.createUsersTable();
+		this.round.setNewRound();
 		
 		/*
 		 * Planet Ressourcen Test
