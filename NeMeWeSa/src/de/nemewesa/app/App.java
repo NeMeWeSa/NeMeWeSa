@@ -65,9 +65,9 @@ public class App {
 	public void runTests(){
 		
 //		loginUser();
-		
-        //db.initDBConnection();	
-        //db.showAllUsers();
+//		
+//        db.initDBConnection();	
+//        db.showAllUsers();
 		
 		/*
 		 * Planet Ressourcen Test

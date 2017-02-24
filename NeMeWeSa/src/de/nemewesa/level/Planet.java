@@ -52,8 +52,8 @@ public class Planet implements Generetable, Observer, Serializable{
  * Hier wird dem Planet mit einem W100 zufaellig zugewiesen ob dieser Planet ueberhaupt Rohstoffe hat
  * 		Wuerfel (1-100) unter 85: dieser Planet hat Bronze Vorkommen
  * 		Wuerfel (1-100) unter 60: dieser Planet hat Silber Vorkommen
- * 		Wuerfel (1-100) unter 45: dieser Planet hat Bronze Vorkommen
- * 		Wuerfel (1-100) unter 15: dieser Planet hat Bronze Vorkommen
+ * 		Wuerfel (1-100) unter 45: dieser Planet hat Gold Vorkommen
+ * 		Wuerfel (1-100) unter 15: dieser Planet hat Juwelen Vorkommen
  */
 		if(Helper.random(0, 100)<bronze.dropRate) {
 			this.bronze.amount = Helper.random(10, 50);
