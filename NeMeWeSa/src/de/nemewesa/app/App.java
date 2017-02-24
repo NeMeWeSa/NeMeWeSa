@@ -67,13 +67,9 @@ public class App {
 	
 	
 	public void runTests(){
-		
-//		loginUser();
-//		loginUser();
-//		loginUser();
-//		loginUser();
-//		loginUser();
-//		loginUser();
+
+		loginUser();
+
 			
         //db.showAllUsers();
 		loginUser();
