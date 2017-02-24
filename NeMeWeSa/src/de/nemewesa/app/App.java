@@ -31,7 +31,7 @@ public class App {
 	public void createNewLevel(int lev){
 		level = new Level(lev);
 		level.generate();
-		//level.printChildren();
+		level.printChildren();
 	}
 	
 	public void createPlayer(){ 
