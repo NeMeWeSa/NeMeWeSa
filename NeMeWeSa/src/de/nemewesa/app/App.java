@@ -55,8 +55,7 @@ public class App {
 	public void runTests(){
 		
 		
-		//this.round.setNewRound();
-		//this.round.setNewRound();
+
 		
 		/*
 		 * Planet Ressourcen Test
