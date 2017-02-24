@@ -59,7 +59,7 @@ public class App {
 			
 		}
 		
-		System.out.println("Sie sind nun angemeldet");		
+		System.out.println("Du bist nun angemeldet");	
 	}
 	
 	
