@@ -23,7 +23,7 @@ public class Planet implements Generetable, Observer, Serializable{
 	public String name;
 	public Round round;
 	public int storage;
-	// size des planeten zwischen 
+	// size des planeten zwischen
 	public int size;
 	public Solarsystem parent;
 	public String[] firstname = {"Ben", "Pe", "To", "Jau", "Ja", "Ter", "Masz", "Res", "Min", "Ro", "Sen", "Ta", "Bue", "Ur", "Ban", "Iak", "Dzi", "Ko", "Wi", "Cki"};
