@@ -48,8 +48,6 @@ public class App {
 	
 		System.out.println("[NeMeWeSa] Willkommen im NeMeWeSa " + player.getName());
 		System.out.println(player);
-			
-
 	
 	}
 	
@@ -70,10 +68,6 @@ public class App {
 		
         //db.initDBConnection();	
         //db.showAllUsers();
-
-		
-		
-
 		
 		/*
 		 * Planet Ressourcen Test
