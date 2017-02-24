@@ -30,6 +30,7 @@ public class Spaceship {
 		this.currentPlanet = currentPlanet;
 	}
 
+	//Hier kann das Raumschiff fliegen, es wird ein neuer Planet übergeben
 	public void fly(Planet planet)
 	{
 		this.currentPlanet = planet;
@@ -45,8 +46,7 @@ public class Spaceship {
 	public boolean capturing(Moon affiliation)
 	{
 		System.out.println("Glückwunsch! "+ affiliation.moonName + " wurde erobert!!!");
-		return affiliation.captured = true;
-				
+		return affiliation.captured = true;				
 	}
 	
 	
