@@ -66,6 +66,10 @@ public class App {
 		loginUser();
 			
         //db.showAllUsers();
+//		loginUser();
+//		
+//        db.initDBConnection();	
+//        db.showAllUsers();
 		
 		/*
 		 * Planet Ressourcen Test
