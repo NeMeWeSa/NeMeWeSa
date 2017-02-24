@@ -68,17 +68,17 @@ public class App {
 	
 	public void runTests(){
 
-		loginUser();
+
 
 			
         //db.showAllUsers();
-		loginUser();
+//		loginUser();
 //		
 //        db.initDBConnection();	
 //        db.showAllUsers();
 		
-        db.initDBConnection();	
-        db.showAllUsers();
+//        db.initDBConnection();	
+//        db.showAllUsers();
 		
 		/*
 		 * Planet Ressourcen Test
