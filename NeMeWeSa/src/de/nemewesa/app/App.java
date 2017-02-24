@@ -29,7 +29,7 @@ public class App {
 	public void createNewLevel(int lev){
 		level = new Level(lev);
 		level.generate();
-		//level.printChildren();
+		level.printChildren();
 	}
 	
 	public void createPlayer(){ 
@@ -51,18 +51,28 @@ public class App {
 	
 	public void loginUser(){
 		
-		while( true ){
-			login = db.loginUser(console);
-			if(login != null)
-				break;
+		if(login == null){
+			while( true ){
+				login = db.loginUser(console);
+				if(login != null)
+					break;
+			}
+			
+			System.out.println("Willkommen " + login.name + ". Du bist nun angemeldet");
 		}
-		
-		System.out.println("Willkommen " + login.name + ". Du bist nun angemeldet");	
+		else{
+			System.out.println("Du bist bereits angemeldet " + login.name);
+		}
 	}
 	
 	
 	public void runTests(){
 		
+		loginUser();
+		loginUser();
+		loginUser();
+		loginUser();
+		loginUser();
 		loginUser();
 			
         //db.showAllUsers();
