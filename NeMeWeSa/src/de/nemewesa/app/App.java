@@ -17,34 +17,36 @@ public class App {
 	private DB db = DB.getInstance();
 	private Console console = new Console();
 	private Login login;
+	private String prefix = "[NeMeWeSa] ";
 
-	public static void main(String[] args) throws Exception {
-
+	public static void main(String[] args)  {
 		App app = new App();
-		app.createNewLevel(1);
-		app.createPlayer();
-		app.runTests();
+		app.init();
+	}
+	
+	public void init(){
+		loginUser();
+		createNewLevel(1);
+		createPlayer(login.name);
+		runTests();
 	}
 
 	public void createNewLevel(int lev){
 		level = new Level(lev);
 		level.generate();
-		level.printChildren();
+		if(DEV_MODE)
+			level.printChildren();
 	}
 	
-	public void createPlayer(){ 
+	public void createPlayer(String name){ 
 		
-//		Scanner scanner = new Scanner(System.in);
-//		System.out.println("[NeMeWeSa] Bitte geben Sie einen Spielernamen ein > ");
-//		String playerName = scanner.nextLine();
-		player = new Player("tom");
+		player = new Player(name);
 		player.setCurrentPlanet(level.getSector(0).getSolarsystem(0).getPlanet(0));
 		player.setHomePlanet(player.getCurrentPlanet());
 		player.setHomeSolarsystem(level.getSector(0).getSolarsystem(0));
-		// Dem Spieler wird der Heimatplanet zu seinem Besitztum hinzugefuegt
 		player.addOwnership(player.getHomePlanet());
 	
-		System.out.println("[NeMeWeSa] Willkommen im NeMeWeSa " + player.getName());
+		System.out.println(prefix + "Willkommen im NeMeWeSa " + player.getName());
 		System.out.println(player);
 	
 	}
@@ -58,28 +60,18 @@ public class App {
 					break;
 			}
 			
-			System.out.println("Willkommen " + login.name + ". Du bist nun angemeldet");
+			System.out.println("[Login] Willkommen " + login.name + ". Du bist nun angemeldet");
 		}
 		else{
-			System.out.println("Du bist bereits angemeldet " + login.name);
+			System.out.println("[Login] Du bist bereits angemeldet " + login.name);
 		}
 	}
 	
 	
 	public void runTests(){
 		
-		loginUser();
-		loginUser();
-		loginUser();
-		loginUser();
-		loginUser();
-		loginUser();
-			
-        //db.showAllUsers();
-//		loginUser();
-//		
-//        db.initDBConnection();	
-//        db.showAllUsers();
+		
+		//db.createUsersTable();
 		
 		/*
 		 * Planet Ressourcen Test
