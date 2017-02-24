@@ -13,7 +13,7 @@ public class App {
 	
 	private Player player;
 	private Level level;
-	private Round round = Round.getRoundInstance();
+	private Round round = Round.getRoundInstance();   
 	private DB db;
 	private Console console;
 
