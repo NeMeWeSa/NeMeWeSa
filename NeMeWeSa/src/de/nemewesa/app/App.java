@@ -31,7 +31,7 @@ public class App {
 	public void createNewLevel(int lev){
 		level = new Level(lev);
 		level.generate();
-		level.printChildren();
+		//level.printChildren();
 	}
 	
 	public void createPlayer(){ 
@@ -64,10 +64,10 @@ public class App {
 	
 	public void runTests(){
 		
-//		loginUser();
+		loginUser();
 		
-        //db.initDBConnection();	
-        //db.showAllUsers();
+        db.initDBConnection();	
+        db.showAllUsers();
 		
 		/*
 		 * Planet Ressourcen Test
