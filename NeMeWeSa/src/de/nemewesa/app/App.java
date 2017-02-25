@@ -1,5 +1,7 @@
 package de.nemewesa.app;
 
+import java.util.Timer;
+
 import de.nemewesa.character.Player;
 import de.nemewesa.db.DB;
 import de.nemewesa.level.Level;
@@ -30,8 +32,14 @@ public class App {
 		
 		//loginUser();
 		createNewLevel(1);
+		//createPlayer(login.name);
 		createPlayer("Master");
 		runTests();
+		
+		// Timeout fuer blockierende Spieler
+		Timer timer = new Timer();
+		timer.scheduleAtFixedRate(new RoundTimer(), 3000, 30000);
+		
 	}
 
 	public void createNewLevel(int lev){
@@ -73,9 +81,15 @@ public class App {
 	
 	public void runTests(){
 		
-		this.round.setNewRound();
+		//this.round.setNewRound();
+		
+		System.out.println(player.getCurrentPlanet().name);
+		System.out.println(player.getCurrentPlanet().parent.name);
+		System.out.println(player.getCurrentPlanet().parent.parent.name);
+		
 		
 		/*
+		 * 
 		 * Planet Ressourcen Test
 		 * Hier kann, wenn der Planet eingenommen wurde (Methode mine "captured == true"), nach Ressourcen gefarmt werden.
 		 * mit mine() wird abgefarmt 

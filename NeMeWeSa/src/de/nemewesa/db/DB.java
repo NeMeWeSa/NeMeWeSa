@@ -109,7 +109,7 @@ public class DB {
             Statement stmt = connection.createStatement();
             ResultSet rs = stmt.executeQuery("SELECT * FROM benutzer WHERE username = '" + login.name + "';");
 
-            if(rs.next()){          	
+            if(rs.next()){
             	if(rs.getString("password").equals(login.pass)){
             		return login;
             	}

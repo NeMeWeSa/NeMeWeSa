@@ -2,6 +2,7 @@ package de.nemewesa.app;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.TimerTask;
 
 public class Round implements Subject, Serializable{
 	
@@ -52,7 +53,5 @@ public class Round implements Subject, Serializable{
 	public int getRound() {
 		return round;
 	}
-	
-	
 
 }
