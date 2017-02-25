@@ -38,7 +38,7 @@ public class App {
 		
 		// Timeout fuer blockierende Spieler
 		Timer timer = new Timer();
-		timer.scheduleAtFixedRate(new RoundTimer(), 3000, 30000);
+		timer.scheduleAtFixedRate(new RoundTimer(), 3000, 35000);
 		
 	}
 
