@@ -32,10 +32,10 @@ public class Solarsystem implements Generetable, Serializable{
 		String planetname = null;
 
 		// Pfad unter Mac
-		String filename = "level/" + Level.level + "/planets/" + element + "/planets.txt";
+		//String filename = "level/" + Level.level + "/planets/" + element + "/planets.txt";
 
 		// Pfad unter Windows
-		//String filename = "level\\" + Level.level + "\\planets\\" + element + "\\planets.txt";
+		String filename = "level\\" + Level.level + "\\planets\\" + element + "\\planets.txt";
 
 		try (BufferedReader br = new BufferedReader(new FileReader(filename))) {
 
