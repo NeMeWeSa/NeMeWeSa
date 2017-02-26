@@ -38,7 +38,9 @@ public class App {
 		
 		// Timeout fuer blockierende Spieler
 		Timer timer = new Timer();
-		timer.scheduleAtFixedRate(new RoundTimer(), 3000, 30000);
+		timer.scheduleAtFixedRate(new RoundTimer(), 2000, 30000);
+		
+		loginUser();
 		
 	}
 
@@ -49,7 +51,7 @@ public class App {
 			level.printChildren();
 	}
 	
-	public void createPlayer(String name){ 
+	public void createPlayer(String name){
 		
 		player = new Player(name);
 		player.setCurrentPlanet(level.getSector(0).getSolarsystem(0).getPlanet(0));
@@ -85,7 +87,7 @@ public class App {
 		
 		System.out.println(player.getCurrentPlanet().name);
 		System.out.println(player.getCurrentPlanet().parent.name);
-		System.out.println(player.getCurrentPlanet().parent.parent.name);
+		System.out.println(player.getCurrentPlanet().parent.parent.name + "\n");
 		
 		
 		/*
