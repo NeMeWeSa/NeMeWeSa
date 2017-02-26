@@ -219,10 +219,11 @@ public class Planet implements Generetable, Observer, Serializable{
  * Sollte es der Fall sein, wird der erste Name wieder Random gesucht.
  * Wenn alles nach Wunsch läuft, wird die zweite Silbe der ersten angehangen und klein geschrieben um ein neues
  * Wort (in diesem Fall Planetenname) zu erhalten.
+ * Es gibt 20 Silben und 2 mögliche plätze.. also 20 hoch 2 = 400
  */
 	public String generateName() {
 		String name1 = firstname[Helper.random(0, firstname.length)];
-		String name2 = firstname[Helper.random(0, firstname.length)];
+		String name2 = firstname[Helper.random(0, firstname.length)]; 
 			while(name1.equals(name2)) {
 			name1 = firstname[Helper.random(0, firstname.length)];
 		}
