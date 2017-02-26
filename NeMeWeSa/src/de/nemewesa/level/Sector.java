@@ -1,6 +1,7 @@
 package de.nemewesa.level;
 
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileReader;
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -37,8 +38,12 @@ public class Sector implements Generetable, Serializable{
 		//String filename = "level/" + Level.level + "/solarsystems/" + element + "/solarsystems.txt";
 
 		// Pfad unter Windows
-		String filename = "level\\" + Level.level + "\\solarsystems\\" + element + "\\solarsystems.txt";
+		//String filename = "level\\" + Level.level + "\\solarsystems\\" + element + "\\solarsystems.txt";
 
+		// Universeller Pfad
+		File filename = new File("level" + File.separator + Level.level 
+				+ File.separator + "solarsystems" + File.separator + element + File.separator + "solarsystems.txt");
+		
 		try (BufferedReader br = new BufferedReader(new FileReader(filename))) {
 
 			while ((solarsystemname = br.readLine()) != null) {
