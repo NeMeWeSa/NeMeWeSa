@@ -25,7 +25,7 @@ public class Planet implements Generetable, Observer, Serializable{
 	public int size;
 	public Solarsystem parent;
 	public String[] firstname = {"Ben", "Pe", "To", "Jau", "Ja", "Ter", "Masz", "Res", "Min", "Ro", "Sen", "Ta", "Bue", "Ur", "Ban", "Iak", "Dzi", "Ko", "Wi", "Cki"};
-	ArrayList<String> woerter = new ArrayList<String>();
+
 /* 
  * wenn das raumschiff zb. 10 plaetze frei hat
  * laesst sich ueber den space festlegen wieviel man tragen kann
@@ -55,24 +55,32 @@ public class Planet implements Generetable, Observer, Serializable{
  * 		Wuerfel (1-100) unter 60: dieser Planet hat Silber Vorkommen
  * 		Wuerfel (1-100) unter 45: dieser Planet hat Gold Vorkommen
  * 		Wuerfel (1-100) unter 15: dieser Planet hat Juwelen Vorkommen
+ * 	
+ * 		Sollte es eine Ressource auf dem Planeten geben, so wird wieder zufällig entschieden wieviel Rohstoff 
+ * 		vorhanden ist.
+ * 
+ * 		Bronze: mindestens 15 --- maximal 70
+ * 		Silber: mindestens 10 --- maximal 60
+ * 		Bronze: mindestens 5 --- maximal 50
+ * 		Bronze: mindestens 1 --- maximal 25
  */
 		if(Helper.random(0, 100)<bronze.dropRate) {
-			this.bronze.amount = Helper.random(10, 50);
+			this.bronze.amount = Helper.random(15, 70);
 			this.bronze.farm = this.bronze.amount;
 			this.bronze.storage = this.citizen*4;
 		}
 		if(Helper.random(0, 100)<silver.dropRate) {
-			this.silver.amount = Helper.random(5, 40);
+			this.silver.amount = Helper.random(10, 60);
 			this.silver.farm = this.silver.amount;
 			this.silver.storage = this.citizen*4;
 		}
 		if(Helper.random(0, 100)<gold.dropRate) { 
-			this.gold.amount = Helper.random(3, 30);
+			this.gold.amount = Helper.random(5, 50);
 			this.gold.farm = this.gold.amount;
 			this.gold.storage = this.citizen*4;
 		}
 		if(Helper.random(0, 100)<jewel.dropRate) {
-			this.jewel.amount = Helper.random(1, 10);
+			this.jewel.amount = Helper.random(1, 25);
 			this.jewel.farm = this.jewel.amount;
 			this.jewel.storage = this.citizen*4;
 		}
@@ -106,6 +114,7 @@ public class Planet implements Generetable, Observer, Serializable{
 /*
  * Mit den einzelnen Methoden wird ein Rohstoff abgearbeitet und dann in dem storage "storagef" eingefuegt"
  * Es wird kontrolliert ob der jeweilige Rohstoff ueberhaupt vorhanden ist durch die "farm" variable
+ * Ausserdem wird sichergestellt das man nicht mehr farmen kann als vorhanden
  */
 	public void mineBronze() {
 		if(this.bronze.farm > 0) {
@@ -204,44 +213,22 @@ public class Planet implements Generetable, Observer, Serializable{
 		
 	}
 /*
- * Noch zu bearbeiten
+ * ZUFÄLLIGE PLANETENNAMEN ERSTELLUNG
+ * Es wird eine erste Silbe zufällig ausgesucht (zwischen 0 und der maximal länge des array)
+ * dann eine zweite silbe. Anschliessend wird überprüft ob diese beiden nicht gleich sind ("Benben", "Toto"...)
+ * Sollte es der Fall sein, wird der erste Name wieder Random gesucht.
+ * Wenn alles nach Wunsch läuft, wird die zweite Silbe der ersten angehangen und klein geschrieben um ein neues
+ * Wort (in diesem Fall Planetenname) zu erhalten.
  */
 	public String generateName() {
 		String name1 = firstname[Helper.random(0, firstname.length)];
 		String name2 = firstname[Helper.random(0, firstname.length)];
-			if(name1.equals(name2)) {
+			while(name1.equals(name2)) {
 			name1 = firstname[Helper.random(0, firstname.length)];
 		}
-		woerter.add(name1+name2);
-		if(woerter.contains(o))
-			
-/*
- * 
- * 
- * 
- * 
- * 
- */
-			
-			
-			
-//		for(int i=0; i<woerter.length; i++) {
-//			woerter[i] = name3;
-//		}
-	
-//		for (int i=0; i<woerter.length; i++) {
-//			for (int j=i+1; j<woerter.length; j++)  {
-//				if (i!=j && woerter[i] == woerter[j]) {
-//					System.out.println("ja");
-//				}				
-//			}		  
-//		}
-		return "nein";
-
-	
-	}
-	
-	
+		String name4 = name1+name2.toLowerCase();
+		return name4;
+	}	
 	public static void defending()
 	{
 		//defencePower
