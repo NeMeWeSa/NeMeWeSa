@@ -16,8 +16,8 @@ public class Moon {
 		this.parent = parent;
 	}
 	public void victory() {
-		if(enemy.enemyHealth<0) {
-//			addOwner
+		if(this.enemy.enemyHealth<0) {
+			
 			captured = true;
 		}
 	}
