@@ -3,6 +3,7 @@ package de.nemewesa.spaceships;
 import de.nemewesa.buildings.Storage;
 import de.nemewesa.character.Enemy;
 import de.nemewesa.level.Planet;
+import de.nemewesa.level.Resource;
 import de.nemewesa.level.SpaceStation;
 
 public class Transporter extends Spaceship{
@@ -34,22 +35,26 @@ public class Transporter extends Spaceship{
 	
 	
 	//Hier wird der Rohsrtoff vom gewählten PLANETEN AUFGENOMMEN
-	public int pickUp(Storage ressource)
+	
+	
+	// http://stackoverflow.com/questions/19602601/create-an-arraylist-with-multiple-object-types
+	//Also erstmal muss ich jede unterschiedliche Ressource als eigenes Objekt deklarieren
+	// Dann muss ich zu jedem einzelnen Objekt dazupacken oder abziehen
+	public void pickUp(Resource amount)
 	{	
 		// Es geht nicht weil ich ein Inhalt von einer ArrayList von ner anderen abziehen will und die zwei werte haben
 		// 
-		for(int amount: Storage)
-		
-		if( < 1000 )
+		if(Planet.amount > 0) // Hier will ich erst gucken ob der Planet rohstoffe zum abholen hat
 		{
-			for(int weight: Planet.ressource) 
+			for(int gold: Planet.resource) // Hier will ich auf die arrayliste vom Lager des Planeten 
 			{
-				if(Planet.resourceName.equals(Transporter.resourceName))
-				{
-					
-				}
+				resource.remove(amount.amount); // Hier will ich die Elemte(Rohstoffe) löschen.
 			}
-			return  start.resourceStock = start.resourceStock - capacity;
+		}
+		else 
+			{	
+				System.out.println("Hier gibt es keine Rohstoffe die man abholen kann! ");	
+			}
 		}
 //		
 //		 

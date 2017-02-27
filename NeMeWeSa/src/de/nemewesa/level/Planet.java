@@ -1,4 +1,4 @@
-package de.nemewesa.level;
+/package de.nemewesa.level;
 
 import java.util.ArrayList;
 

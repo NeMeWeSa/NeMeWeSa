@@ -32,5 +32,7 @@ public class Resource {
 		this.dropRate = dropChance;
 	}  
 	
+	
+	
 
 }
