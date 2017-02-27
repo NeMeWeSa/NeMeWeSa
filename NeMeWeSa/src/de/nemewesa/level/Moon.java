@@ -17,6 +17,7 @@ public class Moon {
 	}
 	public void victory() {
 		if(enemy.enemyHealth<0) {
+//			addOwner
 			captured = true;
 		}
 	}
