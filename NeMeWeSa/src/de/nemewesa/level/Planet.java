@@ -48,6 +48,7 @@ public class Planet implements Generetable, Observer, Serializable{
 		this.citizen = Helper.random(20, 80);
 		this.round  = Round.getRoundInstance();
 		this.round.registerObserver(this);
+//		this.moonName = Moon;
 /*
  * Hier wird dem Planet mit einem W100 zufaellig zugewiesen ob dieser Planet ueberhaupt Rohstoffe hat
  * 		Wuerfel (1-100) unter 85: dieser Planet hat Bronze Vorkommen
