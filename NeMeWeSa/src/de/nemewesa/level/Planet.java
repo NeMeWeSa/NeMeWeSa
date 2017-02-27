@@ -56,7 +56,7 @@ public class Planet implements Generetable, Observer, Serializable{
  * 		Wuerfel (1-100) unter 45: dieser Planet hat Gold Vorkommen
  * 		Wuerfel (1-100) unter 15: dieser Planet hat Juwelen Vorkommen
  * 	
- * 		Sollte es eine Ressource auf dem Planeten geben, so wird wieder zufällig entschieden wieviel Rohstoff 
+ * 		Sollte es eine Ressource auf dem Planeten geben, so wird wieder zufaellig entschieden wieviel Rohstoff 
  * 		vorhanden ist.
  * 
  * 		Bronze: mindestens 15 --- maximal 70
@@ -213,13 +213,13 @@ public class Planet implements Generetable, Observer, Serializable{
 		
 	}
 /*
- * ZUFÄLLIGE PLANETENNAMEN ERSTELLUNG
- * Es wird eine erste Silbe zufällig ausgesucht (zwischen 0 und der maximal länge des array)
- * dann eine zweite silbe. Anschliessend wird überprüft ob diese beiden nicht gleich sind ("Benben", "Toto"...)
+ * ZUFaeLLIGE PLANETENNAMEN ERSTELLUNG
+ * Es wird eine erste Silbe zufaellig ausgesucht (zwischen 0 und der maximal laenge des array)
+ * dann eine zweite silbe. Anschliessend wird ueberprueft ob diese beiden nicht gleich sind ("Benben", "Toto"...)
  * Sollte es der Fall sein, wird der erste Name wieder Random gesucht.
- * Wenn alles nach Wunsch läuft, wird die zweite Silbe der ersten angehangen und klein geschrieben um ein neues
+ * Wenn alles nach Wunsch laeuft, wird die zweite Silbe der ersten angehangen und klein geschrieben um ein neues
  * Wort (in diesem Fall Planetenname) zu erhalten.
- * Es gibt 20 Silben und 2 mögliche plätze.. also 20 hoch 2 = 400
+ * Es gibt 20 Silben und 2 moegliche plaetze.. also 20 hoch 2 = 400
  */
 	public String generateName() {
 		String name1 = firstname[Helper.random(0, firstname.length)];
